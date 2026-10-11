@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-11 13:34:22 UTC",
+  "variant": 27,
+  "context": "film",
+  "context_title": "зернистая плёнка (постобработка)",
+  "factor": "cell",
+  "factor_title": "шаг решётки ×2",
+  "base_seed": 101,
+  "n": 5,
+  "seeds_repro": [
+    101,
+    101,
+    1101,
+    101
+  ],
+  "eq": {
+    "EQ_1_2": true,
+    "EQ_1_4": true,
+    "EQ_1_3": false,
+    "EQ_2_4": true
+  },
+  "eq_png": {
+    "EQ_1_2_png": true
+  },
+  "params_base": {
+    "size": 96,
+    "cell": 2,
+    "octaves": 2,
+    "persistence": 0.7,
+    "quantize": 8,
+    "interp": "smooth"
+  },
+  "params_perturbed": {
+    "size": 96,
+    "cell": 4,
+    "octaves": 2,
+    "persistence": 0.7,
+    "quantize": 8,
+    "interp": "smooth"
+  },
+  "runs_repro": [
+    {
+      "seed": 101,
+      "params": {
+        "size": 96,
+        "cell": 2,
+        "octaves": 2,
+        "persistence": 0.7,
+        "quantize": 8,
+        "interp": "smooth"
+      },
+      "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9",
+      "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f",
+      "mean": 0.5043683619281045,
+      "contrast": 0.17304028789571557,
+      "edge": 0.15972609219126246,
+      "entropy": 7.479325238759554
+    },
+    {
+      "seed": 101,
+      "params": {
+        "size": 96,
+        "cell": 2,
+        "octaves": 2,
+        "persistence": 0.7,
+        "quantize": 8,
+        "interp": "smooth"
+      },
+      "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9",
+      "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f",
+      "mean": 0.5043683619281045,
+      "contrast": 0.17304028789571557,
+      "edge": 0.15972609219126246,
+      "entropy": 7.479325238759554
+    },
+    {
+      "seed": 1101,
+      "params": {
+        "size": 96,
+        "cell": 2,
+        "octaves": 2,
+        "persistence": 0.7,
+        "quantize": 8,
+        "interp": "smooth"
+      },
+      "sha256_pixels": "e10ab97f3373b0135b4b63f94ef545a9bef330ca79169bfc757047735a8c1fbd",
+      "sha256_png": "032465639d6b03bf2c42e0f50a2baa55ef852141b4217a0c28527908fb28bf76",
+      "mean": 0.5017931304466231,
+      "contrast": 0.17530418753629162,
+      "edge": 0.16093481252149983,
+      "entropy": 7.497390202457035
+    },
+    {
+      "seed": 101,
+      "params": {
+        "size": 96,
+        "cell": 2,
+        "octaves": 2,
+        "persistence": 0.7,
+        "quantize": 8,
+        "interp": "smooth"
+      },
+      "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9",
+      "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f",
+      "mean": 0.5043683619281045,
+      "contrast": 0.17304028789571557,
+      "edge": 0.15972609219126246,
+      "entropy": 7.479325238759554
+    }
+  ],
+  "metrics_table": {
+    "mean": {
+      "mean_base": 0.5007697610294117,
+      "s_base": 0.0038449008379104256,
+      "mean_pert": 0.5041445397603486,
+      "s_pert": 0.009568224638265777,
+      "delta": 0.0033747787309368338,
+      "delta_over_s": 0.8777284182889129,
+      "significant": false
+    },
+    "contrast": {
+      "mean_base": 0.17345919976307017,
+      "s_base": 0.000738492310035739,
+      "mean_pert": 0.15587989872311453,
+      "s_pert": 0.0028248816938176865,
+      "delta": -0.01757930103995564,
+      "delta_over_s": 23.80431156975067,
+      "significant": true
+    },
+    "edge": {
+      "mean_base": 0.15948168214654285,
+      "s_base": 0.001411818405972612,
+      "mean_pert": 0.07272875816993464,
+      "s_pert": 0.0006475186404551889,
+      "delta": -0.0867529239766082,
+      "delta_over_s": 61.44765049782977,
+      "significant": true
+    },
+    "entropy": {
+      "mean_base": 7.48303645229952,
+      "s_base": 0.005090956828279946,
+      "mean_pert": 7.331467184803728,
+      "s_pert": 0.024096122628099126,
+      "delta": -0.15156926749579203,
+      "delta_over_s": 29.77225551272292,
+      "significant": true
+    }
+  },
+  "significance_rule": "|Δ| > 2.0·s_base",
+  "env": {
+    "python": "3.10.6",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "zlib": "1.2.12",
+    "generator_version": "1.0",
+    "third_party_packages": "не используются (стандартная библиотека)"
+  },
+  "script_sha256": {
+    "lab01_generator.py": "8f07d340a5a765a8e44f1fec407489cf00114ba54216aa7539c4e7116680e152",
+    "lab01_experiment.py": "69257206dab50ef35de448b45764daad0d4f60dbc98febd8953c6faee28e06b5"
+  }
+}
