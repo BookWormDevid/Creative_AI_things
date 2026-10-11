@@ -1,0 +1,12 @@
+=== Проверка изолированной среды ===
+Python 3.13.5
+platform=Linux-6.18.44-x86_64-with-glibc2.41
+zlib=1.3.1
+=== Демонстрация без явного seed: два запуска ===
+ПРЕДУПРЕЖДЕНИЕ: seed не задан, использован 14429017 — результат не воспроизводится
+{"seed": 14429017, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "b48b4436580cd70f807fcc3e6eb68b6389ebca9b4be234b8908696ae9094d849", "sha256_png": "e04888ffb029202042e50c2f2f53274bb40ad6fed87d2cd57a7a6c17fe39f04c", "mean": 0.4950039998638344, "contrast": 0.17436637046603434, "edge": 0.1583139834881321, "entropy": 7.489493488002828}
+ПРЕДУПРЕЖДЕНИЕ: seed не задан, использован 68062727 — результат не воспроизводится
+{"seed": 68062727, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "0b24ab749e2233c633c5484b3911ab186ae3dc50d434e44aa17d4d79d01843f7", "sha256_png": "ab154550e398cab2ca218cd6eb95da0e6b680b7b402b0d3f85743e4690aec217", "mean": 0.49735243055555556, "contrast": 0.17402086084886237, "edge": 0.16065574475404198, "entropy": 7.491739006139713}
+=== Демонстрация с фиксированным seed: два запуска ===
+{"seed": 101, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9", "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f", "mean": 0.5043683619281045, "contrast": 0.17304028789571343, "edge": 0.15972609219126246, "entropy": 7.479325238759553}
+{"seed": 101, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9", "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f", "mean": 0.5043683619281045, "contrast": 0.17304028789571343, "edge": 0.15972609219126246, "entropy": 7.479325238759553}
