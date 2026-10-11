@@ -1,0 +1,12 @@
+# Журнал подготовки среды (Windows PowerShell), выполнен 2026-10-11 12:12:28 UTC
+> python --version
+Python 3.10.6
+> python -m venv .venv
+(код возврата 0)
+> .venv\Scripts\python -m pip --version
+pip 22.2.1 from C:\Users\Kotda\OneDrive\Рабочий стол\ДГТУ\DSTU programms\Лабы креатив в ИИ\lab01\.venv\Lib\site-packages\pip (python 3.10)
+
+> .venv\Scripts\python -m pip freeze  (сторонних пакетов нет — вывод пуст)
+[строк в выводе: 0]
+> .venv\Scripts\python -c "import lab01_generator" из папки src
+импорт успешен, версия скрипта 1.0
