@@ -29,7 +29,7 @@ def main():
     out = a.out.resolve()
     if out.exists():
         ap.error("Output already exists; choose a new directory to preserve evidence.")
-    protocol_path = LAB / "configs/protocol.json"
+    protocol_path = LAB / "reports/protocol.json"
     registration = json.loads((LAB / "reports/registration.json").read_text(encoding="utf-8"))
     protocol_bytes = protocol_path.read_bytes()
     assert hashlib.sha256(protocol_bytes).hexdigest() == registration["protocol_sha256"], "Registered protocol changed"
