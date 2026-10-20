@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import statistics
 import subprocess
 import sys
@@ -39,12 +40,15 @@ def main():
     commands = []
 
     def run(args, log_name):
-        cmd = [sys.executable, *map(str, args)]
+        root = LAB.parent
+        cmd = [os.path.relpath(sys.executable, root),
+               *(os.path.relpath(str(v), root) if Path(str(v)).is_absolute() else str(v) for v in args)]
         started = datetime.now(timezone.utc).isoformat()
-        result = subprocess.run(cmd, cwd=LAB.parent, capture_output=True, encoding="utf-8", errors="strict")
-        record = {"started_utc": started, "argv": cmd, "cwd": str(LAB.parent), "exit_code": result.returncode}
+        result = subprocess.run(cmd, cwd=LAB.parent, capture_output=True, encoding="utf-8", errors="strict",
+                                env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+        record = {"started_utc": started, "argv": cmd, "cwd": ".", "exit_code": result.returncode}
         commands.append(record)
-        (out / log_name).write_text("COMMAND: " + subprocess.list2cmdline(cmd) + "\n" + "CWD: " + str(LAB.parent)
+        (out / log_name).write_text("COMMAND: " + subprocess.list2cmdline(cmd) + "\nCWD: ."
                                     + "\nSTART UTC: " + started + "\n\nSTDOUT:\n" + result.stdout + "\nSTDERR:\n" + result.stderr,
                                     encoding="utf-8")
         if result.returncode:
@@ -103,7 +107,7 @@ def main():
     write_json(out / "commands.json", commands)
     write_json(out / "summary.json", {"series": summaries, "error_demo": error_runs, "demo_pixel_prefixes_match": True,
                                       "demo_metrics_match_4dp": True, "completed_utc": datetime.now(timezone.utc).isoformat()})
-    print(json.dumps({"output": str(out), "verified_series": [5, 20, 50], "demo_match": True}, ensure_ascii=False))
+    print(json.dumps({"output": os.path.relpath(out, LAB.parent), "verified_series": [5, 20, 50], "demo_match": True}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

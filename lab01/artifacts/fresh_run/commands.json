@@ -1,0 +1,166 @@
+[
+  {
+    "started_utc": "2026-10-20T16:58:48.786950+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_generator.py",
+      "--size",
+      "96",
+      "--cell",
+      "2",
+      "--octaves",
+      "2",
+      "--persistence",
+      "0.7",
+      "--quantize",
+      "8",
+      "--interp",
+      "smooth",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\error_demo\\noseed_1"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:48.902952+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_generator.py",
+      "--size",
+      "96",
+      "--cell",
+      "2",
+      "--octaves",
+      "2",
+      "--persistence",
+      "0.7",
+      "--quantize",
+      "8",
+      "--interp",
+      "smooth",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\error_demo\\noseed_2"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:49.016729+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_generator.py",
+      "--size",
+      "96",
+      "--cell",
+      "2",
+      "--octaves",
+      "2",
+      "--persistence",
+      "0.7",
+      "--quantize",
+      "8",
+      "--interp",
+      "smooth",
+      "--seed",
+      "101",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\error_demo\\seed_1"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:49.129460+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_generator.py",
+      "--size",
+      "96",
+      "--cell",
+      "2",
+      "--octaves",
+      "2",
+      "--persistence",
+      "0.7",
+      "--quantize",
+      "8",
+      "--interp",
+      "smooth",
+      "--seed",
+      "101",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\error_demo\\seed_2"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:49.260780+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_experiment.py",
+      "--variant",
+      "27",
+      "--seed",
+      "101",
+      "--n",
+      "5",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\v27_n5"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:50.000969+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_experiment.py",
+      "--variant",
+      "27",
+      "--seed",
+      "101",
+      "--n",
+      "20",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\v27_n20"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:52.313806+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_experiment.py",
+      "--variant",
+      "27",
+      "--seed",
+      "101",
+      "--n",
+      "50",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\v27_n50"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  },
+  {
+    "started_utc": "2026-10-20T16:58:57.526423+00:00",
+    "argv": [
+      ".venv\\Scripts\\python.exe",
+      "lab01\\src\\lab01_experiment.py",
+      "--variant",
+      "1",
+      "--seed",
+      "101",
+      "--n",
+      "5",
+      "--out",
+      "lab01\\artifacts\\fresh_run\\demo_v01"
+    ],
+    "cwd": ".",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-20T17:09:49.481585+00:00",
+  "scope": "local part only; Engee checklist supplied",
+  "checks": {
+    "registered_protocol_and_original_source_hashes": true,
+    "initial_journal_matches_preregistration_commit": true,
+    "aggregate_metrics_from_per_seed": true,
+    "png_crc_file_and_pixel_hashes": true,
+    "png_files_checked": 18,
+    "demo_matches_published_values": true,
+    "relative_paths_only": true,
+    "text_files_scanned": 48,
+    "docx_xml_valid": true,
+    "pdf_text_complete": true,
+    "pdf_pages": 11,
+    "pdf_visual_review_pages": [
+      1,
+      5,
+      6,
+      8
+    ],
+    "relative_path_runner_repeated_with_matching_results": true,
+    "third_party_dependencies_absent": true
+  }
+}
