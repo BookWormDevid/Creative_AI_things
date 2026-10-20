@@ -1,9 +1,0 @@
-COMMAND: ".venv\Scripts\python.exe" "lab01\src\lab01_generator.py" --size 96 --cell 2 --octaves 2 --persistence 0.7 --quantize 8 --interp smooth --out "lab01\artifacts\fresh_run\error_demo\noseed_2"
-CWD: .
-START UTC: 2026-10-20T16:58:48.902952+00:00
-
-STDOUT:
-{"seed": 1606524776, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "be5cffc183e4376ceeddc172f50c221d3a34ba783ac4cada170a5c46e224b67a", "sha256_png": "c1b58cedeca7545af5ab05362f54bada58a44f4f3509562d58dc2183e0549716", "mean": 0.5013050619553377, "contrast": 0.17453319783068066, "edge": 0.16152949776401787, "entropy": 7.492617098084477}
-
-STDERR:
-ПРЕДУПРЕЖДЕНИЕ: seed не задан, использован 1606524776 — результат не воспроизводится

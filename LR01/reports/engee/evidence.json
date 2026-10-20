@@ -1,0 +1,31 @@
+{
+  "performed_at": "2026-10-20T20:19:00+03:00",
+  "account_version": "26.10",
+  "workspace_version": "26.9.2-H4",
+  "runtime_version": "1.12.4",
+  "notebook_metadata_version": "1.9.3",
+  "source_note": "reports/engee_checklist.md",
+  "source_script": "reports/engee/LR01_environment.ngscript",
+  "source_script_sha256": "f1ed8498053a49a7299cca347290fb28009a3eafabd7006ab8a692aa214dabe7",
+  "states": [
+    {
+      "action": "seed = 101",
+      "variables": "seed=101, Int64",
+      "saved_output": "101",
+      "screenshot": "Engeept2.png"
+    },
+    {
+      "action": "clear variables",
+      "variables": "empty",
+      "saved_output": "101",
+      "screenshot": "Engeept3.png"
+    },
+    {
+      "action": "restart kernel",
+      "variables": "empty",
+      "saved_output": "101",
+      "screenshot": "Engeept4.png"
+    }
+  ],
+  "passport_uploaded": "as recorded in checklist"
+}

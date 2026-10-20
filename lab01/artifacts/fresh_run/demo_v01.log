@@ -1,8 +1,0 @@
-COMMAND: ".venv\Scripts\python.exe" "lab01\src\lab01_experiment.py" --variant 1 --seed 101 --n 5 --out "lab01\artifacts\fresh_run\demo_v01"
-CWD: .
-START UTC: 2026-10-20T16:58:57.526423+00:00
-
-STDOUT:
-контекст=clouds фактор=size EQ={'EQ_1_2': True, 'EQ_1_4': True, 'EQ_1_3': False, 'EQ_2_4': True} значимо=[]
-
-STDERR:

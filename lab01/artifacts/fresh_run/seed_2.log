@@ -1,8 +1,0 @@
-COMMAND: ".venv\Scripts\python.exe" "lab01\src\lab01_generator.py" --size 96 --cell 2 --octaves 2 --persistence 0.7 --quantize 8 --interp smooth --seed 101 --out "lab01\artifacts\fresh_run\error_demo\seed_2"
-CWD: .
-START UTC: 2026-10-20T16:58:49.129460+00:00
-
-STDOUT:
-{"seed": 101, "params": {"size": 96, "cell": 2, "octaves": 2, "persistence": 0.7, "quantize": 8, "interp": "smooth"}, "sha256_pixels": "fbbd63d2201d1cb6d6d652d600547dc5bc18ca945356a425b6c83511dd494da9", "sha256_png": "f44c8c078ed2c70b700c409dc067e79b368efe441b6e67aac7008e74b8a94a2f", "mean": 0.5043683619281045, "contrast": 0.17304028789571557, "edge": 0.15972609219126246, "entropy": 7.479325238759554}
-
-STDERR:

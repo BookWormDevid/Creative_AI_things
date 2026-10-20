@@ -1,8 +1,0 @@
-COMMAND: ".venv\Scripts\python.exe" "lab01\src\lab01_experiment.py" --variant 27 --seed 101 --n 20 --out "lab01\artifacts\fresh_run\v27_n20"
-CWD: .
-START UTC: 2026-10-20T16:58:50.000969+00:00
-
-STDOUT:
-контекст=film фактор=cell EQ={'EQ_1_2': True, 'EQ_1_4': True, 'EQ_1_3': False, 'EQ_2_4': True} значимо=['contrast', 'edge', 'entropy']
-
-STDERR:
