@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-10-20T17:49:31.716565+00:00",
-  "scope": "Parts A and B documented; report DOCX only, local passport PDF only; identity fields blank",
+  "checked_utc": "2026-10-20T18:08:15.984084+00:00",
+  "scope": "Parts A and B documented; report DOCX only; passport PDF only; author and variant filled, group and reviewer blank",
   "checks": {
     "registered_protocol_original_sources_and_run_order": true,
     "reproducibility_full_pixel_hashes": true,
@@ -23,7 +23,12 @@
     "report_pdf_generated": false,
     "report_format": "docx",
     "passport_format": "pdf",
-    "passport_docx_absent": true
+    "passport_docx_absent": true,
+    "report_name_matches_author_and_variant": true,
+    "report_author_filled": true
   },
-  "passport_pdf_sha256": "6bf7661e6e6ee479c2aa2c1801e4cfab491e1e42bf225208f5ebefe274c43903"
+  "passport_pdf_sha256": "6bf7661e6e6ee479c2aa2c1801e4cfab491e1e42bf225208f5ebefe274c43903",
+  "report_file": "Котов_Дэвид_Арсенович_Вариант_27_ЛР_1.docx",
+  "author": "Котов Дэвид Арсенович",
+  "variant": 27
 }

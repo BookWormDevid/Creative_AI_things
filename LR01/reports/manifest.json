@@ -1,5 +1,5 @@
 {
-  "root": "lab01",
+  "root": "LR01",
   "sha256": {
     "artifacts/fresh_run/commands.json": "5da82ec14ebde2366e49d95fc7b5b9f1b336e29d51ab15c675ea2d958d0ea56a",
     "artifacts/fresh_run/demo_v01/artifacts/base_seed101.png": "9779f1fe26d3815c5663d067f4b3454c0be748ce6e64f18bf79366cfb0051b59",
@@ -61,8 +61,10 @@
     "artifacts/fresh_run/v27_n50/passport.md": "ffb9952d0f83865bf124ce773dfd0709b586451d1384e2e29646c5d401c57696",
     "artifacts/fresh_run/v27_n50/per_seed.json": "a19400ae2fac5349bd4a6ef0ad80ab0fcb401cc1840d0b7d4925535f5473f88f",
     "artifacts/fresh_run/v27_n50/results.json": "4127a8858d7e0cfdc1c679862a817a0a899683fc1fd20762cd52c43ff7d9e4b9",
+    "assignment/variants_lr01.json": "351d23b2d180b5c389de3823b143c0dcd4184ea19b3a1ff0af9e8a19cabb7bbf",
+    "assignment/ЛР01_Подготовка_среды_и_паспорт_эксперимента_МУ.md": "e6ef12ce8f4f459c6946904e6343d74ab444e8f6a848a48214bf538660a00e68",
     "configs/protocol.json": "f72244937e5886da5f999da166928b9aa1d997eb8d6e6a0eefe43f7197da581b",
-    "README.md": "a4a71c64972a719c0d8ac4b851b6d10003c32029d50bab76bae81c7b24cd22c3",
+    "README.md": "b120dd1a5d9c28db8bcba9699ad474bf913f1736d652bf972139676f0fd61f6e",
     "reports/engee/Engee_screenshots_pt1.png": "b450440308bde0810228a3c7d2766b5a0b7e452211965bc563d26c160a9f3841",
     "reports/engee/Engeept2.png": "27357fd5703848f882fe324d13b1fe825a35823604c3f61acd2ab3c18c0793e3",
     "reports/engee/Engeept3.png": "fb21133226a85576550fa9a450a19855d41a76924b324aada56234e6cabc10d4",
@@ -76,15 +78,13 @@
     "reports/journal.md": "d1ea2a8607f31b8a76d0669ced38fea9921ed2c1a87f4768e8deb6100e488615",
     "reports/passport.pdf": "6bf7661e6e6ee479c2aa2c1801e4cfab491e1e42bf225208f5ebefe274c43903",
     "reports/registration.json": "49e96d18cd76a93e56edc071791796a64497a638f07ad75c8406fb0ee216ffe8",
-    "reports/report.docx": "1e5af0eecf8428ac381543863b566b961668a6d3269487317b2cb53036aaa869",
-    "reports/validation.json": "8591441d680cc3f92d9f650af513bd9f81d758a61fc5952e2c9d05e23ac426f6",
+    "reports/validation.json": "47e7095193098438e6a29e37e74be20521762dd6c3f6a56c39d61279a8d6c3a2",
     "requirements.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "src/build_report.py": "74ef1f28e2beec0597edff2927c1018d19da2be4b89f794bf4dac341c44f3b9a",
-    "src/export_pdf.ps1": "1c5e75f5fc16a9630506b9b73e64e2a2ef9e14976a4f8cb07a4c53af2b4d92e9",
+    "src/build_report.py": "d0b450578d6b018c8b4b0b8c9e54a4e4d8c569c57b7a15e29da8ed0e55ae3776",
+    "src/export_pdf.ps1": "2895a087d396f1cff2663e1efc0d5a72429fbe2736431b5ee8601a10ac63adc1",
     "src/lab01_experiment.py": "69257206dab50ef35de448b45764daad0d4f60dbc98febd8953c6faee28e06b5",
     "src/lab01_generator.py": "8f07d340a5a765a8e44f1fec407489cf00114ba54216aa7539c4e7116680e152",
     "src/run_lab01.py": "d6ba68b1f23ab6b85960bc5e7277949717ec68ff8859e9e3cc60935582605a99",
-    "variants_lr01.json": "351d23b2d180b5c389de3823b143c0dcd4184ea19b3a1ff0af9e8a19cabb7bbf",
-    "ЛР01_Подготовка_среды_и_паспорт_эксперимента_МУ.md": "e6ef12ce8f4f459c6946904e6343d74ab444e8f6a848a48214bf538660a00e68"
+    "Котов_Дэвид_Арсенович_Вариант_27_ЛР_1.docx": "6b4e4981b74455338a97966426f6b5754e46ed6d8c584c77bb6e74e72652df7c"
   }
 }

@@ -7,8 +7,9 @@ try {
     $labWord = New-Object -ComObject Word.Application
     $labWord.Visible = $false
     $labWord.DisplayAlerts = 0
-    foreach ($labName in @('report')) {
-        $labDocx = Join-Path $labFolder ('reports\' + $labName + '.docx')
+    foreach ($labReport in (Get-ChildItem -LiteralPath $labFolder -Filter '*.docx')) {
+        $labName = $labReport.BaseName
+        $labDocx = $labReport.FullName
         $labPdf = [System.IO.Path]::ChangeExtension($labDocx, '.pdf')
         $labDocument = $labWord.Documents.Open($labDocx, $false, $true)
         $labDocument.Repaginate()
