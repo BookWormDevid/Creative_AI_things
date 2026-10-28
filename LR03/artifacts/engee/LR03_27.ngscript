@@ -1,0 +1,309 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "6560f7cb",
+      "cell_type": "code",
+      "source": [
+        "# ЛР №3, вариант 27. Котов Дэвид Арсенович.\n# Сцена 5 «шахматная структура» (lo 0,15, hi 0,85, шум 0,02, checker 8) × воздействие 3 «уменьшение в 4 раза и возврат».\n# Скрипт для Engee. Одна ячейка — один шаг плана методических указаний (раздел 5).\n# Шаг 2 (гипотеза и допуск до запуска) выполнен в журнале LR03/reports/journal.md.\n\n# Шаг 1. Подготовка среды: дата, версия Julia, рабочая папка, учебная библиотека\nusing Dates, SHA\nprintln(\"Дата и время (UTC): \", now(UTC))\nprintln(\"VERSION = \", VERSION)\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nprintln(\"Рабочая папка: LR03\")\nlib = \"lab03_lib.jl\"\nprintln(\"lab03_lib.jl: \", filesize(lib), \" байт, SHA-256 = \", bytes2hex(open(sha256, lib)))\nprintln(\"совпадает с методичкой (cd1622643e7cfe7c…): \", startswith(bytes2hex(open(sha256, lib)), \"cd1622643e7cfe7c\"))\ninclude(lib)\nmake_scene(101) |> describe_image\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": " ",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1c863843",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 3. Сцена варианта и её свойства: размер, тип, диапазон, объём в байтах\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nVARIANT = 27\nSCENE, FACTOR = divrem(VARIANT - 1, 6) .+ 1\nP = scene_preset(SCENE)\nimg = make_scene(101; P...)\nd = describe_image(img)\nprintln(\"вариант \", VARIANT, \": сцена \", SCENE, \", воздействие \", FACTOR)\nprintln(\"параметры сцены: \", P)\nprintln(\"size = \", d.size, \", eltype = \", d.eltype)\nprintln(\"min = \", d.min, \", max = \", d.max)\nprintln(\"bytes = \", d.bytes, \"  (ожидалось 128·128·3·8 = \", 128 * 128 * 3 * 8, \")\")\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "02431aaa",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 4. Яркость двумя способами и максимум модуля разности\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\ny_manual = luma_manual(img)\ny_gray = luma_images(img)\nprintln(\"максимум модуля разности = \", maximum(abs.(y_manual .- y_gray)))\nprintln(\"сравнение с допуском isapprox: \", isapprox(y_manual, y_gray))\nprintln(\"SHA вручную: \", array_sha(y_manual)[1:16])\nprintln(\"SHA Gray:    \", array_sha(y_gray)[1:16])\nprintln(\"контрольные суммы равны: \", array_sha(y_manual) == array_sha(y_gray))\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "48f8b232",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 5. Контрольная сумма яркости при seed 101 — дважды\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nsha_1 = array_sha(luma_images(make_scene(101; P...)))\nsha_2 = array_sha(luma_images(make_scene(101; P...)))\nsha_ctrl = array_sha(luma_images(make_scene(102; P...)))\nprintln(\"seed 101, построение 1: \", sha_1)\nprintln(\"seed 101, построение 2: \", sha_2)\nprintln(\"совпадение: \", sha_1 == sha_2)\nprintln(\"контроль, seed 102:     \", sha_ctrl[1:16], \"  (отличается: \", sha_ctrl != sha_1, \")\")\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "53e40027",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 6. Гистограмма яркости до воздействия (32 интервала) и сохранение графика\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nusing Plots\ng = luma_images(img)\ncb = hist_counts(g, 32)\nxc = ((1:32) .- 0.5) ./ 32\nhb = bar(xc, cb; bar_width = 1 / 32, legend = false, size = (560, 380),\n         title = \"Before: scene 5, seed 101\", xlabel = \"luminance\", ylabel = \"count\")\nsavefig(hb, \"v27_hist_before.png\")\nprintln(\"сохранено: v27_hist_before.png;  занятых интервалов: \", count(>(0), cb), \" из 32\")\nhb\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d7501d2e",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 7. Воздействие варианта, гистограмма после, сохранение изображений в PNG\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nh = apply_factor(g, FACTOR)\nprintln(\"диапазон до:    \", extrema(g))\nprintln(\"диапазон после: \", extrema(h))\nprintln(\"значения после в [0, 1]: \", all(0 .<= h .<= 1))\nsave(\"v27_before.png\", Gray{N0f8}.(g))\nsave(\"v27_after.png\", Gray{N0f8}.(clamp01.(h)))\nca = hist_counts(h, 32)\nymax = 1.05 * max(maximum(cb), maximum(ca))\nha = bar(xc, ca; bar_width = 1 / 32, legend = false, size = (560, 380), ylims = (0, ymax),\n         title = \"After: downscale x4 and back\", xlabel = \"luminance\", ylabel = \"count\")\nsavefig(ha, \"v27_hist_after.png\")\nhp = plot(bar(xc, cb; bar_width = 1 / 32, legend = false, ylims = (0, ymax), title = \"Before\", xlabel = \"luminance\", ylabel = \"count\"),\n          bar(xc, ca; bar_width = 1 / 32, legend = false, ylims = (0, ymax), title = \"After\", xlabel = \"luminance\");\n          layout = (1, 2), size = (1000, 380))\nsavefig(hp, \"v27_hist_compare.png\")\nprintln(\"сохранено: v27_before.png, v27_after.png, v27_hist_after.png, v27_hist_compare.png\")\nprintln(\"занятых интервалов: до \", count(>(0), cb), \", после \", count(>(0), ca))\nmosaicview(Gray.(g), Gray.(clamp01.(h)); nrow = 1, npad = 4, fillvalue = 1)\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c529fe25",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 8. Сводка варианта по серии seed 101…105: таблица метрик и PSNR\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nS = variant_summary(VARIANT)\nps_seed = [psnr_db(luma_images(make_scene(s; P...)), apply_factor(luma_images(make_scene(s; P...)), FACTOR)) for s in 101:105]\nprintln(\"вариант \", S.variant, \": сцена \", S.ctx, \", воздействие \", S.fac)\nprintln(\"PSNR по seed 101…105: \", round.(ps_seed; digits = 4))\nprintln(\"средний PSNR = \", S.psnr, \" дБ\")\nfor (m, b, s, a, dd, r, sig) in S.rows\n    println(rpad(string(m), 9), \"база = \", b, \"  s = \", s, \"  после = \", a,\n            \"  Δ = \", dd, \"  |Δ|/s = \", round(r; digits = 3), \"  |Δ|>2s = \", sig,\n            \"  отн. = \", round(100 * dd / b; digits = 3), \" %\")\nend\n\n# Для варианта 27: та же сцена, но уменьшение в 2 раза (вариант 26).\nS2 = variant_summary(26)\nps_seed2 = [psnr_db(luma_images(make_scene(s; P...)), apply_factor(luma_images(make_scene(s; P...)), 2)) for s in 101:105]\nprintln(\"Сравнение с уменьшением в 2 раза на той же сцене:\")\nprintln(\"PSNR x2 по seed 101…105: \", round.(ps_seed2; digits = 4))\nprintln(\"средний PSNR x2 = \", S2.psnr, \" дБ; x4 = \", S.psnr, \" дБ\")\nfor (m, b, s, a, dd, r, sig) in S2.rows\n    println(\"x2 \", rpad(string(m), 9), \"база = \", b, \"  s = \", s, \"  после = \", a,\n            \"  Δ = \", dd, \"  |Δ|/s = \", round(r; digits = 3), \"  |Δ|>2s = \", sig,\n            \"  отн. = \", round(100 * dd / b; digits = 3), \" %\")\nend\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f06ab290",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 9. Значимость: статистическая (|Δ| > 2s) и практическая (допуск, записанный до запуска)\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nTOL_REL, TOL_PSNR = 0.05, 30.0\nprintln(\"допуск: относительное изменение > \", 100 * TOL_REL, \" %  или  PSNR < \", TOL_PSNR, \" дБ\")\nfor (m, b, s, a, dd, r, sig) in S.rows\n    rel = abs(dd) / abs(b)\n    println(rpad(string(m), 9), \"статистически: \", sig ? \"значимо\" : \"не значимо\",\n            \" | практически: \", rel > TOL_REL ? \"важно\" : \"не важно\",\n            \" (\", round(100 * rel; digits = 3), \" %)\")\nend\nprintln(\"PSNR \", round(S.psnr; digits = 3), \" дБ: \", S.psnr < TOL_PSNR ? \"ниже 30 дБ — практически важно\" : \"выше 30 дБ — в допуске\")\nprintln(\"\\nчувствительность вывода к порогу (основной допуск 5 % не меняется):\")\nfor t in (0.005, 0.01, 0.02, 0.05, 0.10)\n    imp = [string(m) for (m, b, s, a, dd, r, sig) in S.rows if abs(dd) / abs(b) > t]\n    println(\"  порог \", rpad(string(100 * t) * \" %\", 7), \"→ практически важны: \", isempty(imp) ? \"нет\" : join(imp, \", \"))\nend\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0b918ac3",
+      "cell_type": "code",
+      "source": [
+        "# Продвинутый уровень рубрики: воспроизведение демонстрационного варианта 1 и сверка с методичкой\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nD = variant_summary(1)\nsha_demo = array_sha(luma_images(make_scene(101)))[1:16]\nprintln(\"демо PSNR = \", D.psnr, \"   в методичке 34.594244830067446   совпало: \", D.psnr == 34.594244830067446)\nprintln(\"демо SHA  = \", sha_demo, \"   в методичке 50567c6b9e5e4ac1   совпало: \", sha_demo == \"50567c6b9e5e4ac1\")\nfor (m, b, s, a, dd, r, sig) in D.rows\n    println(\"  \", rpad(string(m), 9), \"база = \", b, \"  после = \", a, \"  |Δ|/s = \", round(r; digits = 3))\nend\n\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "262bf824",
+      "cell_type": "code",
+      "source": [
+        "# Сохранение всех значений в файл для отчёта и паспорта эксперимента\ncd(\"/user/Котов_Дэвид_Арсенович/LR03\")\nopen(\"v27_results.txt\", \"w\") do io\n    println(io, \"date_utc = \", now(UTC)); println(io, \"julia = \", VERSION)\n    println(io, \"lib_sha256 = \", bytes2hex(open(sha256, lib)))\n    println(io, \"variant = \", VARIANT, \"; scene = \", SCENE, \"; factor = \", FACTOR, \"; params = \", P)\n    println(io, \"describe = \", d)\n    println(io, \"luma_maxdiff = \", maximum(abs.(y_manual .- y_gray)), \"; isapprox = \", isapprox(y_manual, y_gray), \"; sha_equal = \", array_sha(y_manual) == array_sha(y_gray))\n    println(io, \"sha_seed101 = \", sha_1, \"; repeat_equal = \", sha_1 == sha_2, \"; sha_seed102 = \", sha_ctrl)\n    println(io, \"range_before = \", extrema(g), \"; range_after = \", extrema(h))\n    println(io, \"bins_used_before = \", count(>(0), cb), \"; bins_used_after = \", count(>(0), ca))\n    println(io, \"psnr_mean = \", S.psnr, \"; psnr_by_seed = \", ps_seed)\n    for (m, b, s, a, dd, r, sig) in S.rows\n        println(io, m, \": base=\", b, \"; s=\", s, \"; after=\", a, \"; delta=\", dd, \"; ratio=\", r, \"; sig2s=\", sig, \"; rel=\", dd / b)\n    end\n    println(io, \"psnr_x2_mean = \", S2.psnr, \"; psnr_x2_by_seed = \", ps_seed2)\n    for (m, b, s, a, dd, r, sig) in S2.rows\n        println(io, \"x2_\", m, \": base=\", b, \"; s=\", s, \"; after=\", a, \"; delta=\", dd, \"; ratio=\", r, \"; sig2s=\", sig, \"; rel=\", dd / b)\n    end\n    println(io, \"demo_psnr = \", D.psnr, \"; demo_sha = \", sha_demo)\n    for (m, b, s, a, dd, r, sig) in D.rows\n        println(io, \"demo_\", m, \": base=\", b, \"; after=\", a, \"; ratio=\", r)\n    end\nend\nprint(read(\"v27_results.txt\", String))\n"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    }
+  ]
+}
