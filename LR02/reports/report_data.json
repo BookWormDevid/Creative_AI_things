@@ -1,0 +1,691 @@
+{
+  "created_utc": "2026-10-28T11:51:27.444553+00:00",
+  "variant": 27,
+  "config": {
+    "variant": 27,
+    "output": "LR02/artifacts/v27",
+    "lr01_passport": "LR01/artifacts/fresh_run/v27_n5/passport.json",
+    "owner": "Котов Дэвид Арсенович",
+    "own_code_license": "MIT",
+    "teacher_code_license": "в материалах не указана; не распространять под MIT",
+    "policy": {
+      "commercial_use": false,
+      "redistribution": true,
+      "derivatives": false,
+      "share_alike_acceptable": false
+    }
+  },
+  "expectations": {
+    "nd_items": [
+      "item07",
+      "item08",
+      "item11"
+    ],
+    "stage": "before_first_audit",
+    "recorded_utc": "2026-10-28T11:45:22.9131853Z",
+    "inputs": {
+      "LR02/artifacts/v27/manifest.csv": "edb1a7fe449272cd9f8c1c6507b3e0a24c97836ffe0b4ae002d170a02dfbb524",
+      "LR02/artifacts/v27/policy.json": "39386ac3b46d739900343843497b563fd764369601a923d08fc1f7acbdfbf0b3"
+    },
+    "scripts": {
+      "LR02/src/lab02_risks.py": "9581afb696758047d3dc427b7287ab00221e3e2f06f8ecddc6cbd7477e9f6f47",
+      "LR02/src/lab02_common.py": "00624727e535237bb9a363abfed1f6d14a50e748e52a0fc57e03877727706f41",
+      "LR02/src/lab02_make_variant.py": "4db53312f631af41e324d73166a465e0046732faa9a92c414ba571fa62f742dd",
+      "LR02/src/lab02_audit.py": "50bf77e48dca05a123f30ca259ed420d7bb4bee8792373cab4ebaf67087f90ae",
+      "LR02/src/lab02_model_card.py": "1bd32cd27a64395bcff81053518a3bc2f1576b937a7373207f47899382ece1ac"
+    },
+    "expected_rules": [
+      "R9"
+    ],
+    "expected_warnings": 1,
+    "expected_errors": 0
+  },
+  "environment": {
+    "python": "3.10.6",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "dependencies": "только стандартная библиотека",
+    "cwd": "."
+  },
+  "validation": {
+    "started_utc": "2026-10-28T11:49:20.173886+00:00",
+    "completed_utc": "2026-10-28T11:49:20.969832+00:00",
+    "errors": 0,
+    "warnings": 1,
+    "candidate_count": 11,
+    "quarantine_count": 1,
+    "risk_count": 6,
+    "risk_categories": 5,
+    "checks": {
+      "expectations_match": true,
+      "all_findings_decided": true,
+      "all_nd_items_decided": true,
+      "candidate_audit_clear": true,
+      "model_card_9_sections": true,
+      "passport_7_sections": true,
+      "counterfactual_R4": true,
+      "risk_validator_pass": true,
+      "intentional_error_rejected": true
+    },
+    "result": "PASS"
+  },
+  "commands": {
+    "cwd": ".",
+    "steps": [
+      {
+        "command": [
+          "python",
+          "LR02/src/lab02_make_variant.py",
+          "--variant",
+          "27",
+          "--out",
+          "LR02/artifacts/v27"
+        ],
+        "exit_code": 0,
+        "log": "LR02/reports/generation.log"
+      },
+      {
+        "command": [
+          "python",
+          "LR02/src/lab02_risks.py",
+          "--csv",
+          "LR02/artifacts/error_demo/risk_bad.csv"
+        ],
+        "exit_code": 1,
+        "log": "LR02/artifacts/error_demo/validation.log"
+      },
+      {
+        "command": [
+          "python",
+          "LR02/src/lab02_risks.py",
+          "--csv",
+          "LR02/artifacts/risk_register.csv"
+        ],
+        "exit_code": 0,
+        "log": "LR02/reports/risk_validation.log"
+      }
+    ],
+    "api_steps": [
+      "lab02_audit.audit(original_rows, policy)",
+      "lab02_audit.audit(candidate_rows, policy)",
+      "lab02_model_card.build(lr01_passport, teacher_code_license, owner)"
+    ]
+  },
+  "sources": {
+    "checked_on": "2026-10-28",
+    "sources": [
+      {
+        "title": "Методические указания ЛР 2",
+        "path": "LR02/assignment/ЛР_02_Карточка_модели_лицензии_и_риски.md",
+        "use": "вариант, правила R1–R10, структура документов и проверки"
+      },
+      {
+        "title": "CC BY-ND 4.0 Legal Code",
+        "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.en",
+        "sections": "2(a)(1), 2(a)(4), 2(b)(1), 3(a)",
+        "use": "оригинал можно распространять при соблюдении условий; адаптацию нельзя распространять по этой лицензии; необходимые технические изменения сами по себе не создают Adapted Material; права личности отдельно"
+      },
+      {
+        "title": "NIST AI 600-1 (2024), section 2",
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+        "use": "названия категорий рисков; собственные сценарии рисков и шкала L×I взяты из учебной постановки, а не из обязательной шкалы NIST"
+      },
+      {
+        "title": "Паспорт собственного эксперимента ЛР 1",
+        "path": "LR01/artifacts/fresh_run/v27_n5/passport.json",
+        "use": "параметры генератора, среда и метрики для карточки модели"
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "item": "item09",
+      "rule": "R9",
+      "decision": "Карантин до проверки происхождения",
+      "reason": "SHA-256 совпадает с item06; лицензии Apache-2.0 и CC0-1.0 и условные авторы различаются",
+      "engineering_action": "Исключить item09 из списка кандидатов; сохранить исходную строку и связь с item06",
+      "legal_question": "Какой источник подтверждает авторство и применимую лицензию? Совпадение сумм этого не доказывает",
+      "status": "Решение принято; подтверждение отсутствует"
+    }
+  ],
+  "nd_decisions": [
+    {
+      "item": "item07",
+      "license": "CC-BY-ND-4.0",
+      "scenario_conflict": "no",
+      "decision": "Оставить учебным кандидатом без изменений",
+      "conditions": "Указать Автор-38; источник и ссылку на лицензию; не публиковать адаптацию",
+      "alternative": "Если нужна обработка: заменить на подтверждённый CC0 или CC-BY либо получить отдельное разрешение"
+    },
+    {
+      "item": "item08",
+      "license": "CC-BY-ND-4.0",
+      "scenario_conflict": "no",
+      "decision": "Оставить учебным кандидатом без изменений",
+      "conditions": "Указать Автор-34; источник и ссылку на лицензию; не публиковать адаптацию",
+      "alternative": "Если нужна обработка: заменить на подтверждённый CC0 или CC-BY либо получить отдельное разрешение"
+    },
+    {
+      "item": "item11",
+      "license": "CC-BY-ND-4.0",
+      "scenario_conflict": "no",
+      "decision": "Оставить учебным кандидатом без изменений",
+      "conditions": "Указать Автор-19; источник и ссылку на лицензию; не публиковать адаптацию",
+      "alternative": "Если нужна обработка: заменить на подтверждённый CC0 или CC-BY либо получить отдельное разрешение"
+    }
+  ],
+  "candidate_manifest": [
+    {
+      "id": "item01",
+      "filename": "item01.wav",
+      "media_type": "audio",
+      "source": "https://example.org/archive/item01",
+      "date_acquired": "2026-01-04",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-35",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "5f023bc12a90d785d6fc9445fc70616cc4ecf4d6ad2adf41019be30bb351ea30"
+    },
+    {
+      "id": "item02",
+      "filename": "item02.txt",
+      "media_type": "text",
+      "source": "https://example.org/archive/item02",
+      "date_acquired": "2026-08-08",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-39",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "4c102d952aab9a68e16309023f109caec71247b166b59193c900454cb34b5149"
+    },
+    {
+      "id": "item03",
+      "filename": "item03.png",
+      "media_type": "image",
+      "source": "https://example.org/archive/item03",
+      "date_acquired": "2026-07-28",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-33",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "e1c3c43133fd94998b400170cae6c2f91f06bff03c45f50fb6a2f7576e0e0b5e"
+    },
+    {
+      "id": "item04",
+      "filename": "item04.wav",
+      "media_type": "audio",
+      "source": "https://example.org/archive/item04",
+      "date_acquired": "2026-01-23",
+      "license": "MIT",
+      "rights_holder": "Автор-24",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "6754182868f03f68c201afc808394b957126eb8e627c95a82f38463132b5d895"
+    },
+    {
+      "id": "item05",
+      "filename": "item05.txt",
+      "media_type": "text",
+      "source": "https://example.org/archive/item05",
+      "date_acquired": "2026-05-16",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-25",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "b1679acada66d82d2c4e47e5deb9e6a471b2e89ff199ef089054e159dbc6cc07"
+    },
+    {
+      "id": "item06",
+      "filename": "item06.png",
+      "media_type": "image",
+      "source": "https://example.org/archive/item06",
+      "date_acquired": "2026-02-20",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-40",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "6569550d4210acaad1099bb1c4c51fd93907dbb3629464b6f49728d40d163a93"
+    },
+    {
+      "id": "item07",
+      "filename": "item07.wav",
+      "media_type": "audio",
+      "source": "https://example.org/archive/item07",
+      "date_acquired": "2026-02-17",
+      "license": "CC-BY-ND-4.0",
+      "rights_holder": "Автор-38",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "ac25f4a70c86a8938a3c193df4e0cec777dfc9e70c1cae11ba66592728f2412b"
+    },
+    {
+      "id": "item08",
+      "filename": "item08.txt",
+      "media_type": "text",
+      "source": "https://example.org/archive/item08",
+      "date_acquired": "2026-05-01",
+      "license": "CC-BY-ND-4.0",
+      "rights_holder": "Автор-34",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "03e025fe4dbaa766bead5c42e499d8c80498f79cfe19a2a1b3eacf8a98c3336e"
+    },
+    {
+      "id": "item10",
+      "filename": "item10.wav",
+      "media_type": "audio",
+      "source": "https://example.org/archive/item10",
+      "date_acquired": "2026-07-15",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-07",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "96242c0288bf297ee7adce59ff0010004a19ce1ced8c33030b1321560e556c08"
+    },
+    {
+      "id": "item11",
+      "filename": "item11.txt",
+      "media_type": "text",
+      "source": "https://example.org/archive/item11",
+      "date_acquired": "2026-03-28",
+      "license": "CC-BY-ND-4.0",
+      "rights_holder": "Автор-19",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "9aa93d63206f833f41ea5114d9030deaa0b165b0746d33b558daadbd3ff13ab3"
+    },
+    {
+      "id": "item12",
+      "filename": "item12.png",
+      "media_type": "image",
+      "source": "https://example.org/archive/item12",
+      "date_acquired": "2026-05-18",
+      "license": "CC0-1.0",
+      "rights_holder": "Автор-10",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "cde857eece67477d19e7470dc21e0ce9c9be531a600ae8906fb01acdddae8525"
+    }
+  ],
+  "quarantine_manifest": [
+    {
+      "id": "item09",
+      "filename": "item09.png",
+      "media_type": "image",
+      "source": "https://example.org/archive/item09",
+      "date_acquired": "2026-06-13",
+      "license": "Apache-2.0",
+      "rights_holder": "Автор-13",
+      "personal_data": "no",
+      "consent": "n-a",
+      "sha256": "6569550d4210acaad1099bb1c4c51fd93907dbb3629464b6f49728d40d163a93"
+    }
+  ],
+  "candidate_audit": [],
+  "counterfactual_policy": {
+    "scenario": "электронный каталог фотоархива (публикация без изменений)",
+    "commercial_use": false,
+    "redistribution": true,
+    "derivatives": true,
+    "share_alike_acceptable": false
+  },
+  "counterfactual_audit": [
+    {
+      "rule": "R4",
+      "severity": "error",
+      "item": "item07",
+      "message": "CC-BY-ND-4.0: условие NoDerivatives запрещает производные, а сценарий их создаёт"
+    },
+    {
+      "rule": "R4",
+      "severity": "error",
+      "item": "item08",
+      "message": "CC-BY-ND-4.0: условие NoDerivatives запрещает производные, а сценарий их создаёт"
+    },
+    {
+      "rule": "R9",
+      "severity": "warning",
+      "item": "item09",
+      "message": "контрольная сумма совпадает с item06 — дубликат"
+    },
+    {
+      "rule": "R4",
+      "severity": "error",
+      "item": "item11",
+      "message": "CC-BY-ND-4.0: условие NoDerivatives запрещает производные, а сценарий их создаёт"
+    }
+  ],
+  "model_card": {
+    "source": "LR01/artifacts/fresh_run/v27_n5/passport.json",
+    "source_sha256": "0c067b3ee521d277a1c90be40c4f5cdbbd835d7017d40218fc9fb4b4ae89d376",
+    "owner": "Котов Дэвид Арсенович",
+    "sections": [
+      {
+        "section": "Model Details (сведения о модели)",
+        "content": "* Название и версия: lab01_generator.py, версия 1.0; контрольные суммы скриптов записаны в паспорте ЛР 1.\n* Тип: детерминированный процедурный алгоритм (шум значений с несколькими октавами); **не обучаемая модель**, весов нет.\n* Среда выполнения: Python 3.10.6 (CPython), Windows-10-10.0.19045-SP0.\n* Лицензия кода: в материалах не указана; не распространять под MIT. Ответственный: Котов Дэвид Арсенович.\nЛицензия MIT корневого репозитория относится к собственному коду. Лицензия выданного lab01_generator.py не установлена; открытость исходника не равна разрешению. До внешнего распространения запросить условия у преподавателя."
+      },
+      {
+        "section": "Intended Use (назначение)",
+        "content": "* Основное: учебное — отработка воспроизводимости эксперимента (seed, контрольные суммы, паспорт).\n* Вне назначения: оценка качества реальных генеративных моделей; выпуск изображений в продуктах; любые задачи, где важна эстетика или безопасность."
+      },
+      {
+        "section": "Factors (факторы)",
+        "content": "* Параметры, влияющие на результат: размер, шаг решётки, число октав, затухание, квантование, интерполяция (базовые значения: {\"size\": 96, \"cell\": 2, \"octaves\": 2, \"persistence\": 0.7, \"quantize\": 8, \"interp\": \"smooth\"}).\n* Группы людей: не применимо — данных о людях нет."
+      },
+      {
+        "section": "Metrics (метрики)",
+        "content": "* Среднее, контраст, граничная энергия, энтропия гистограммы; разброс между запусками — выборочное стандартное отклонение по n значениям seed.\n* Решение о влиянии фактора — учебный критерий |Δ| > 2s, заданный до эксперимента (не статистический тест)."
+      },
+      {
+        "section": "Evaluation Data (данные для оценки)",
+        "content": "Синтетические изображения генератора из ЛР 1, n=5: seed 101–105, для каждого базовые параметры и cell=4; протокол воспроизводимости seed 101, 101, 1101, 101. Нет независимого тестового набора и разбиения по людям. Манифест ЛР 2 к оценке не относится."
+      },
+      {
+        "section": "Training Data (обучающие данные)",
+        "content": "* Обучение не выполнялось; обучающих данных нет."
+      },
+      {
+        "section": "Quantitative Analyses (количественный анализ)",
+        "content": "| Метрика | среднее по серии | s (n−1) |\n|---|---:|---:|\n| среднее | 0,5008 | 0,0038 |\n| контраст | 0,1735 | 0,0007 |\n| граничная энергия | 0,1595 | 0,0014 |\n| энтропия, бит | 7,4830 | 0,0051 |\n\n* Значения — из паспорта ЛР 1; для другого набора seed они будут другими."
+      },
+      {
+        "section": "Ethical Considerations (этические аспекты)",
+        "content": "* Персональных данных и материалов третьих лиц нет; результаты синтетические.\n* Карточка учебного генератора не заменяет анализ рисков реальных моделей (см. реестр рисков ЛР 2)."
+      },
+      {
+        "section": "Caveats and Recommendations (ограничения и рекомендации)",
+        "content": "n=5 мало для точной оценки разброса; модель-заменитель; метрики не оценивают эстетику. В ЛР 1 также есть n=20 и n=50, но здесь воспроизведена карточка основного запуска n=5. Пробелы паспорта: не указаны лицензия исходного кода и отдельная оценка качества; нет оснований делать вывод о правах на результат. Лицензию уточнить у преподавателя. Обучающих данных и весов нет; их лицензии неприменимы. При переходе к обученной модели добавить точную ревизию весов и сведения о её данных."
+      }
+    ],
+    "base_parameters": {
+      "size": 96,
+      "cell": 2,
+      "octaves": 2,
+      "persistence": 0.7,
+      "quantize": 8,
+      "interp": "smooth"
+    },
+    "changed_parameters": {
+      "size": 96,
+      "cell": 4,
+      "octaves": 2,
+      "persistence": 0.7,
+      "quantize": 8,
+      "interp": "smooth"
+    },
+    "reproducibility": {
+      "EQ_1_2": true,
+      "EQ_1_4": true,
+      "EQ_1_3": false,
+      "EQ_2_4": true
+    },
+    "metrics": {
+      "mean": {
+        "mean_base": 0.5007697610294117,
+        "s_base": 0.0038449008379104256,
+        "mean_pert": 0.5041445397603486,
+        "s_pert": 0.009568224638265777,
+        "delta": 0.0033747787309368338,
+        "delta_over_s": 0.8777284182889129,
+        "significant": false
+      },
+      "contrast": {
+        "mean_base": 0.17345919976307017,
+        "s_base": 0.000738492310035739,
+        "mean_pert": 0.15587989872311453,
+        "s_pert": 0.0028248816938176865,
+        "delta": -0.01757930103995564,
+        "delta_over_s": 23.80431156975067,
+        "significant": true
+      },
+      "edge": {
+        "mean_base": 0.15948168214654285,
+        "s_base": 0.001411818405972612,
+        "mean_pert": 0.07272875816993464,
+        "s_pert": 0.0006475186404551889,
+        "delta": -0.0867529239766082,
+        "delta_over_s": 61.44765049782977,
+        "significant": true
+      },
+      "entropy": {
+        "mean_base": 7.48303645229952,
+        "s_base": 0.005090956828279946,
+        "mean_pert": 7.331467184803728,
+        "s_pert": 0.024096122628099126,
+        "delta": -0.15156926749579203,
+        "delta_over_s": 29.77225551272292,
+        "significant": true
+      }
+    }
+  },
+  "risk_ranking": [
+    {
+      "risk_id": "R02",
+      "category": "Intellectual Property",
+      "description": "Ошибочная лицензия при совпавшей сумме item06/item09",
+      "likelihood": "3",
+      "impact": "5",
+      "measure": "Карантин item09; запросить первоисточник и доказательство прав; не переносить лицензию item06 по совпадению суммы",
+      "owner": "Куратор данных",
+      "trigger": "item09 попал в список публикации до документированной проверки происхождения",
+      "score": 15
+    },
+    {
+      "risk_id": "R01",
+      "category": "Intellectual Property",
+      "description": "Публикация изменённого ND-материала при скрытой обработке",
+      "likelihood": "3",
+      "impact": "4",
+      "measure": "Публиковать оригинал; отключить кадрирование и ретушь; спорную операцию согласовать либо заменить объект",
+      "owner": "Редактор каталога",
+      "trigger": "Для item07/item08/item11 обнаружен опубликованный изменённый вариант без отдельного разрешения",
+      "score": 12
+    },
+    {
+      "risk_id": "R04",
+      "category": "Information Integrity",
+      "description": "Условные источники и строковые суммы приняты за доказательство подлинности медиа",
+      "likelihood": "4",
+      "impact": "3",
+      "measure": "Пометка синтетического набора; хранить происхождение; для реальных файлов считать SHA-256 по байтам",
+      "owner": "Куратор данных",
+      "trigger": "В описании выпуска example.org назван проверенным источником реального файла",
+      "score": 12
+    },
+    {
+      "risk_id": "R03",
+      "category": "Data Privacy",
+      "description": "При переходе к реальному архиву в метаданные попадут лица или геолокация без основания публикации",
+      "likelihood": "2",
+      "impact": "5",
+      "measure": "Проверять содержимое и метаданные; минимизировать поля; спорные объекты изолировать без загрузки реальных данных в учебный набор",
+      "owner": "Ответственный за данные",
+      "trigger": "Найдено идентифицируемое лицо или координаты без документированного основания публикации",
+      "score": 10
+    },
+    {
+      "risk_id": "R05",
+      "category": "Information Security",
+      "description": "После проверки незаметно заменены манифест или политика",
+      "likelihood": "2",
+      "impact": "4",
+      "measure": "Контроль SHA-256 и сравнение с expectations.json; повторный аудит при изменении файлов",
+      "owner": "Сопровождающий репозитория",
+      "trigger": "Хеш входного CSV или policy.json не совпал с зафиксированным",
+      "score": 8
+    },
+    {
+      "risk_id": "R06",
+      "category": "Value Chain and Component Integration",
+      "description": "Неверный паспорт ЛР 1 или чужой вариант включён в карточку модели",
+      "likelihood": "2",
+      "impact": "4",
+      "measure": "Фиксировать относительный путь и SHA-256 паспорта; сверять параметры и исходный код генератора",
+      "owner": "Сопровождающий репозитория",
+      "trigger": "Карточка содержит cell не равный 2→4 или хеш источника отличается от зафиксированного",
+      "score": 8
+    }
+  ],
+  "input_sha256": {
+    "LR02/artifacts/v27/manifest.csv": "edb1a7fe449272cd9f8c1c6507b3e0a24c97836ffe0b4ae002d170a02dfbb524",
+    "LR02/artifacts/v27/policy.json": "39386ac3b46d739900343843497b563fd764369601a923d08fc1f7acbdfbf0b3",
+    "LR01/artifacts/fresh_run/v27_n5/passport.json": "0c067b3ee521d277a1c90be40c4f5cdbbd835d7017d40218fc9fb4b4ae89d376"
+  },
+  "archive_url": "https://github.com/BookWormDevid/Creative_AI_things/archive/refs/heads/main.zip",
+  "control_answers": [
+    [
+      "1. Данные, веса и результат",
+      "Лицензия входных материалов регулирует их использование; лицензия весов — модель; права на результат оцениваются отдельно. CC0-вход не отменяет ограничений лицензии модели. У процедурного генератора весов нет."
+    ],
+    [
+      "2. BY, SA, NC, ND",
+      "BY — атрибуция; SA — условия распространения адаптаций; NC — некоммерческое использование; ND — запрет распространения адаптаций по этой лицензии. В коммерческой афише NC конфликтует с продажей, ND — с публикацией адаптации."
+    ],
+    [
+      "3. Идентификатор лицензии",
+      "CC BY 4 — неоднозначная запись без точной версии и подтверждения. Пример точного идентификатора: CC-BY-4.0; лицензию всё равно сверяют с первоисточником."
+    ],
+    [
+      "4. Две находки по объекту",
+      "CC-BY-NC-SA-4.0 может одновременно дать R3 и R5. Исключение объекта устраняет обе причины использования в этом сценарии."
+    ],
+    [
+      "5. Ошибка и предупреждение",
+      "Ошибка — противоречие учебным правилам, предупреждение — необходимость решения. R9 item09 нельзя игнорировать: выбраны карантин и проверка происхождения."
+    ],
+    [
+      "6. Согласия",
+      "Два объекта без документа (none и n-a): две ошибки. Два с document при публикации: два предупреждения; без публикации предупреждений нет, ошибки остаются."
+    ],
+    [
+      "7. Оценка риска",
+      "3×5=15. Риск 4×3=12 выше 2×5=10. Шкала учебная, оценки экспертные."
+    ],
+    [
+      "8. Пробелы паспорта ЛР 1",
+      "Лицензия выданного кода и ответственный не заданы отдельными полями паспорта. Ответственный добавлен из задания; лицензия не выдумана и осталась неустановленной. Оценки эстетического качества нет."
+    ],
+    [
+      "9. Признак наступления",
+      "Наблюдаемое событие позволяет запустить меру. Для Data Privacy: найдено идентифицируемое лицо или координаты без документированного основания публикации."
+    ],
+    [
+      "10. Пределы аудита",
+      "Скрипт не подтверждает авторство, права, действительность согласия или содержание файлов. Нужны реальные файлы, первоисточник лицензии, уведомления, документы правообладателя и отдельная оценка спорных вопросов."
+    ]
+  ],
+  "layout": {
+    "reference": "https://github.com/ykvnkm/ai-in-creative-industries/tree/main/LR02",
+    "directories": [
+      "assignment",
+      "src",
+      "artifacts",
+      "reports"
+    ],
+    "exceptions": [
+      "Вариант 27 и ФИО Котов Дэвид Арсенович",
+      "Паспорт только reports/passport.md по AGENTS.md",
+      "PDF экспортируется вручную"
+    ],
+    "no_extra_helpers": true
+  },
+  "final_check": {
+    "checked_utc": "2026-10-28T12:11:18.121738+00:00",
+    "result": "PASS",
+    "word_opened": true,
+    "word_pages": 10,
+    "manual_word_formatting_preserved": true,
+    "no_absolute_paths": true,
+    "local_readme_links_valid": true,
+    "teacher_scripts_unchanged": true,
+    "five_source_scripts": true,
+    "four_directories": true,
+    "report_docx_sha256": "e42b5885c4a70ab1702cfac23386d85a7ded61fb3f2b1f7b8b0d0833efffed69",
+    "files": [
+      "LR02/README.md",
+      "LR02/artifacts/model_card.md",
+      "LR02/artifacts/model_card_before_decisions.md",
+      "LR02/artifacts/risk_ranking.md",
+      "LR02/artifacts/risk_ranking_broken.md",
+      "LR02/artifacts/risk_register.csv",
+      "LR02/artifacts/risk_register_broken.csv",
+      "LR02/artifacts/risk_register_template.csv",
+      "LR02/artifacts/v27/audit_report.json",
+      "LR02/artifacts/v27/audit_report.md",
+      "LR02/artifacts/v27/data_card_draft.md",
+      "LR02/artifacts/v27/manifest.csv",
+      "LR02/artifacts/v27/policy.json",
+      "LR02/artifacts/v27/variant.json",
+      "LR02/assignment/demo_journal/data_card_sample.md",
+      "LR02/assignment/demo_journal/error_demo.log",
+      "LR02/assignment/demo_journal/variant01/audit_report.json",
+      "LR02/assignment/demo_journal/variant01/audit_report.md",
+      "LR02/assignment/demo_journal/variant01/data_card_draft.md",
+      "LR02/assignment/demo_journal/variant01/manifest.csv",
+      "LR02/assignment/demo_journal/variant01/model_card.md",
+      "LR02/assignment/demo_journal/variant01/policy.json",
+      "LR02/assignment/demo_journal/variant01/risk_ranking.md",
+      "LR02/assignment/demo_journal/variant01/risk_register.csv",
+      "LR02/assignment/demo_journal/variant01/variant.json",
+      "LR02/assignment/variants_lr02.json",
+      "LR02/assignment/ЛР_02_Карточка_модели_лицензии_и_риски.docx",
+      "LR02/assignment/ЛР_02_Карточка_модели_лицензии_и_риски.md",
+      "LR02/reports/error_demo.log",
+      "LR02/reports/journal.md",
+      "LR02/reports/passport.md",
+      "LR02/reports/report_data.json",
+      "LR02/src/lab02_audit.py",
+      "LR02/src/lab02_common.py",
+      "LR02/src/lab02_make_variant.py",
+      "LR02/src/lab02_model_card.py",
+      "LR02/src/lab02_risks.py",
+      "LR02/Котов_Дэвид_Арсенович_Вариант_27_ЛР_2.docx"
+    ],
+    "word_tables": 16,
+    "structure_matches_reference": true,
+    "journal_sha256": "2c4e2e086b874ab06a1db7c4893dfafb505613c8876c2ab74e95f642d13a884c"
+  },
+  "initial_expectations_text": "# Журнал ЛР 2\n\n## План и ожидания до запуска\n\nДата UTC: 2026-10-28T11:44:14.3836822Z.\n\nВариант 27: сценарий catalog, профиль nd. Сначала создать набор, затем проверить его по неизменённой политике. Ожидаются 12 объектов и три записи CC-BY-ND-4.0. Правило R4 не должно сработать: производные не создаются. По устройству генератора ожидается одно фоновое предупреждение R8, R9 или R10; конкретная запись и тип пока не определены. Ошибок R1–R7 при заданных метаданных не ожидается. Каждое предупреждение требует решения; отсутствие ошибок не подтверждает реальные права.\n\nКритерии завершения: решения для всех находок; 7 разделов паспорта; 9 разделов карточки; не менее 5 рисков в 4 категориях, включая Data Privacy и Intellectual Property; RESULT: PASS; DOCX без абсолютных путей и с пустыми полями группы и проверяющего. PDF не создаётся.\n\nОжидания записаны после чтения задания и исходного кода, до первого создания и аудита набора. Это проверка учебных правил, а не слепой эксперимент.\n## После создания набора, до аудита\n\nДата UTC: 2026-10-28T11:45:22.9131853Z.\n\nКоманда: .venv/Scripts/python.exe LR02/src/lab02_make_variant.py --variant 27 --out LR02/artifacts/v27\n\nВ манифесте 12 строк. ND: item07 (audio), item08 и item11 (text). Это смешанный учебный манифест, несмотря на название сценария «фотоархив»; заменять его реальными фотографиями не нужно. У item09 совпадает sha256 с item06, но отличаются лицензии (Apache-2.0 и CC0-1.0), даты, источники и условные авторы. Перед аудитом уточняю ожидание: 0 ошибок, 1 предупреждение R9 для item09; R4 не сработает. Предварительное решение — карантин item09 до проверки происхождения.\n\n",
+  "document_structure_reference": {
+    "journal": "https://github.com/ykvnkm/ai-in-creative-industries/blob/main/LR02/reports/journal.md",
+    "docx": "https://github.com/ykvnkm/ai-in-creative-industries/tree/main/LR02",
+    "main_sections": 8,
+    "appendix": "А. Ответы на контрольные вопросы",
+    "table_count": 16,
+    "headings": [
+      "1. Цель, сценарий, политика использования и ожидания",
+      "1.1. Цель",
+      "1.2. Сценарий варианта 27",
+      "1.3. Ожидания, записанные до запуска аудита",
+      "2. Данные, их происхождение и ограничения",
+      "3. Среда и версии",
+      "4. Ход работы",
+      "5. Результаты",
+      "5.1. Отчёт аудита и сопоставление с ожиданиями",
+      "5.2. Решения по находкам",
+      "5.3. Паспорт набора данных",
+      "5.4. Карточка модели",
+      "5.5. Реестр рисков",
+      "5.6. Намеренная ошибка: реестр не проходит проверку",
+      "6. Анализ: что скрипт не может проверить, где решение спорно и где требуется решение автора",
+      "6.1. Два обстоятельства, которых правила R1–R10 не обнаруживают",
+      "6.2. Что скрипт принципиально не может проверить",
+      "6.3. Граница инженерного решения и юридического вопроса",
+      "7. Вывод",
+      "8. Артефакты и ссылки",
+      "Приложение А. Ответы на контрольные вопросы",
+      "1. Лицензия на данные, лицензия на веса и права на результат",
+      "2. Условия BY, SA, NC, ND и конфликт со сценарием афиши",
+      "3. Почему «CC BY 4» нельзя принять как лицензию",
+      "4. Почему объект получает две находки и как снять их одним решением",
+      "5. Чем ошибка отличается от предупреждения",
+      "6. Расчёт по объектам с персональными данными",
+      "7. Оценка риска и сравнение двух рисков",
+      "8. Какие разделы карточки не заполнились по паспорту ЛР №1",
+      "9. Почему риск без признака наступления не управляется",
+      "10. Что скрипт принципиально не может проверить"
+    ]
+  }
+}

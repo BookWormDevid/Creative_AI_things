@@ -1,0 +1,8 @@
+[
+  {
+    "rule": "R9",
+    "severity": "warning",
+    "item": "item09",
+    "message": "контрольная сумма совпадает с item06 — дубликат"
+  }
+]

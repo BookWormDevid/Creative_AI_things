@@ -1,0 +1,13 @@
+id,filename,media_type,source,date_acquired,license,rights_holder,personal_data,consent,sha256
+item01,item01.wav,audio,https://example.org/archive/item01,2026-01-04,CC0-1.0,Автор-35,no,n-a,5f023bc12a90d785d6fc9445fc70616cc4ecf4d6ad2adf41019be30bb351ea30
+item02,item02.txt,text,https://example.org/archive/item02,2026-08-08,CC0-1.0,Автор-39,no,n-a,4c102d952aab9a68e16309023f109caec71247b166b59193c900454cb34b5149
+item03,item03.png,image,https://example.org/archive/item03,2026-07-28,CC0-1.0,Автор-33,no,n-a,e1c3c43133fd94998b400170cae6c2f91f06bff03c45f50fb6a2f7576e0e0b5e
+item04,item04.wav,audio,https://example.org/archive/item04,2026-01-23,MIT,Автор-24,no,n-a,6754182868f03f68c201afc808394b957126eb8e627c95a82f38463132b5d895
+item05,item05.txt,text,https://example.org/archive/item05,2026-05-16,CC0-1.0,Автор-25,no,n-a,b1679acada66d82d2c4e47e5deb9e6a471b2e89ff199ef089054e159dbc6cc07
+item06,item06.png,image,https://example.org/archive/item06,2026-02-20,CC0-1.0,Автор-40,no,n-a,6569550d4210acaad1099bb1c4c51fd93907dbb3629464b6f49728d40d163a93
+item07,item07.wav,audio,https://example.org/archive/item07,2026-02-17,CC-BY-ND-4.0,Автор-38,no,n-a,ac25f4a70c86a8938a3c193df4e0cec777dfc9e70c1cae11ba66592728f2412b
+item08,item08.txt,text,https://example.org/archive/item08,2026-05-01,CC-BY-ND-4.0,Автор-34,no,n-a,03e025fe4dbaa766bead5c42e499d8c80498f79cfe19a2a1b3eacf8a98c3336e
+item09,item09.png,image,https://example.org/archive/item09,2026-06-13,Apache-2.0,Автор-13,no,n-a,6569550d4210acaad1099bb1c4c51fd93907dbb3629464b6f49728d40d163a93
+item10,item10.wav,audio,https://example.org/archive/item10,2026-07-15,CC0-1.0,Автор-07,no,n-a,96242c0288bf297ee7adce59ff0010004a19ce1ced8c33030b1321560e556c08
+item11,item11.txt,text,https://example.org/archive/item11,2026-03-28,CC-BY-ND-4.0,Автор-19,no,n-a,9aa93d63206f833f41ea5114d9030deaa0b165b0746d33b558daadbd3ff13ab3
+item12,item12.png,image,https://example.org/archive/item12,2026-05-18,CC0-1.0,Автор-10,no,n-a,cde857eece67477d19e7470dc21e0ce9c9be531a600ae8906fb01acdddae8525
