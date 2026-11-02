@@ -41,5 +41,3 @@ SHA яркости своей сцены воспроизведена: `2296bfdf
 | [reports/passport.md](reports/passport.md) | паспорт и SHA-256 сохранённых результатов |
 | [reports/figures/](reports/figures/) | снимки экрана Engee |
 | [assignment/](assignment/) | методические материалы |
-
-Структура и оформление — по [примеру LR03](https://github.com/ykvnkm/ai-in-creative-industries/tree/main/LR03). Отчёт только DOCX; PDF экспортируется вручную.
