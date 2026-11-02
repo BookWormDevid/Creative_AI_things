@@ -1,0 +1,13 @@
+{
+  "seed": 1027,
+  "noise_equal": false,
+  "noise_max_diff": 6.51171875,
+  "noise_correlation": 0.009586439116719938,
+  "fixed_latents_reproduce_A": true,
+  "fixed_latents_reproduce_B": true,
+  "same_latents_sha_equal": true,
+  "control_sha256": {
+    "cpu": "30bdc1a4b905e91934e24b2ba7830a625449149dd9eaef949a33a69557bbc51f",
+    "cuda": "30bdc1a4b905e91934e24b2ba7830a625449149dd9eaef949a33a69557bbc51f"
+  }
+}

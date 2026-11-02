@@ -1,0 +1,10 @@
+{
+  "seed": 1027,
+  "sha256_run1": "30bdc1a4b905e91934e24b2ba7830a625449149dd9eaef949a33a69557bbc51f",
+  "sha256_run2": "aaf54fabd18ec043aa77abdb2cb67b95ef352a53f5246e3e5ea6dce66c25f3d5",
+  "run1_equals_reference": true,
+  "run2_equals_reference": false,
+  "psnr_db": 13.91,
+  "max_diff": 224,
+  "verdict": "different"
+}
