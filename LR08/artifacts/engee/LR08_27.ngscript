@@ -1,0 +1,118 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "lr08-v27-00",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 1. Среда: дата, версии, файлы работы и их SHA-256\n",
+        "using Dates, SHA\n",
+        "W = \"/user/Котов_Дэвид_Арсенович/LR08\"\n",
+        "PY = \"/user/.user_venvs/py3.11/bin/python3\"\n",
+        "ART = joinpath(W, \"artifacts\", \"engee\")\n",
+        "println(\"Дата и время (UTC): \", now(UTC))\n",
+        "println(\"Julia VERSION = \", VERSION, \";  ядер: \", Sys.CPU_THREADS, \";  ОЗУ: \", round(Sys.total_memory() / 2^30; digits = 1), \" ГБ\")\n",
+        "for (f, ref) in ((\"lab07_lib.py\", \"d84b83a8\"), (\"lab08_lib.py\", \"f414c49b\"), (\"lab08_demo.py\", \"8ab781bf\"), (\"lr08_variant27.py\", \"\"))\n",
+        "    h = bytes2hex(open(sha256, joinpath(W, f)))\n",
+        "    println(rpad(f, 18), filesize(joinpath(W, f)), \" байт, SHA-256 \", h, isempty(ref) ? \"\" : \"; совпадает с указаниями: $(startswith(h, ref))\")\n",
+        "end\n",
+        "# Окружение py3.11 обновлялось после проверки указаний, и torch в нём может не оказаться.\n",
+        "# Тогда ставится версия указаний — torch 2.4.1, сборка для процессора (графического ускорителя в Engee нет).\n",
+        "# Вывод pip пишется в pip_install.log: его можно читать, пока установка идёт.\n",
+        "has(m) = success(ignorestatus(`$PY -c \"import $m\"`))\n",
+        "PIPLOG = joinpath(W, \"pip_install.log\")\n",
+        "pipi(args...) = run(pipeline(`$PY -m pip install --progress-bar off $args`; stdin = devnull, stdout = PIPLOG, stderr = PIPLOG, append = true))\n",
+        "for (m, args) in ((\"numpy\", (\"numpy<2\",)), (\"PIL\", (\"Pillow\",)), (\"sympy\", (\"sympy\",)),\n",
+        "                  (\"torch\", (\"torch==2.4.1\", \"--index-url\", \"https://download.pytorch.org/whl/cpu\")))\n",
+        "    has(m) && continue\n",
+        "    println(\"ставлю \", join(args, \" \")); pipi(args...)\n",
+        "end\n",
+        "run(`$PY -c \"import sys, torch, numpy, PIL; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.cuda.is_available(), '| numpy', numpy.__version__, '| Pillow', PIL.__version__)\"`)\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    },
+    {
+      "id": "lr08-v27-01",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 3–8. Скрипт варианта 27 (3 потока). Запуск блокирующий: фоновый запуск из ячейки (wait = false) в Engee\n",
+        "# подвешивает ячейку. Если results_v27.json уже записан, скрипт повторно не запускается (обучение на процессоре\n",
+        "# не побитово воспроизводимо, и повтор заменил бы уже сохранённые результаты другими).\n",
+        "cmd_v27 = addenv(Cmd(`$PY -u $(joinpath(W, \"lr08_variant27.py\"))`; dir = W), \"OMP_NUM_THREADS\" => \"3\")\n",
+        "if isfile(joinpath(ART, \"results_v27.json\"))\n",
+        "    println(\"результат варианта 27 уже есть: results_v27.json от \", Dates.unix2datetime(mtime(joinpath(ART, \"results_v27.json\"))), \" UTC — повторно не запускаю\")\n",
+        "else\n",
+        "    t0 = time(); run(pipeline(cmd_v27; stdin = devnull, stdout = joinpath(W, \"out_v27.txt\"), stderr = joinpath(W, \"err_v27.txt\")))\n",
+        "    println(\"вариант 27 выполнен за \", round((time() - t0) / 60; digits = 1), \" мин\")\n",
+        "end\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    },
+    {
+      "id": "lr08-v27-02",
+      "cell_type": "code",
+      "source": [
+        "# Демонстрационный скрипт указаний как есть (вариант 1), в отдельной папке demo — его comparison.png не затрёт лист варианта\n",
+        "mkpath(joinpath(W, \"demo\"))\n",
+        "cmd_demo = addenv(Cmd(`$PY -u $(joinpath(W, \"lab08_demo.py\"))`; dir = joinpath(W, \"demo\")), \"OMP_NUM_THREADS\" => \"4\")\n",
+        "t0 = time(); run(pipeline(cmd_demo; stdin = devnull, stdout = joinpath(W, \"demo\", \"out_demo.txt\"), stderr = joinpath(W, \"demo\", \"err_demo.txt\")))\n",
+        "println(\"демонстрационный скрипт выполнен за \", round((time() - t0) / 60; digits = 1), \" мин; stderr: \", filesize(joinpath(W, \"demo\", \"err_demo.txt\")), \" байт\")\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    },
+    {
+      "id": "lr08-v27-03",
+      "cell_type": "code",
+      "source": [
+        "# Вывод скрипта варианта 27 целиком (снимок вывода консоли для отчёта)\n",
+        "print(read(joinpath(W, \"out_v27.txt\"), String))\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    },
+    {
+      "id": "lr08-v27-04",
+      "cell_type": "code",
+      "source": [
+        "# Вывод демонстрационного скрипта (вариант 1, как есть)\n",
+        "print(read(joinpath(W, \"demo\", \"out_demo.txt\"), String))\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    },
+    {
+      "id": "lr08-v27-05",
+      "cell_type": "code",
+      "source": [
+        "# Шаг 6. Лист сравнения comparison.png варианта 27\n",
+        "using Images\n",
+        "load(joinpath(ART, \"comparison.png\"))\n"
+      ],
+      "execution_count": null,
+      "outputs": [],
+      "metadata": {}
+    }
+  ]
+}
