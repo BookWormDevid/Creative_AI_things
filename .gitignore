@@ -26,7 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-PLAN.md
+*PLAN.md
 *engee_checklist.md
 AGENTS.md
 
