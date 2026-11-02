@@ -1,0 +1,86 @@
+{
+  "variant": 27,
+  "model_revision": "d84b83a878f55e95289d76a788dc9fa84d3249d0d33aa719d9db8d6792fd2698",
+  "models": {
+    "A": {
+      "arch": "conv",
+      "d": 8,
+      "loss": "mse",
+      "noise": 0.0,
+      "eval_noise": 0.0,
+      "n_train": 4096,
+      "epochs": 20
+    },
+    "B": {
+      "arch": "dense",
+      "d": 8,
+      "loss": "mse",
+      "noise": 0.0,
+      "eval_noise": 0.0,
+      "n_train": 4096,
+      "epochs": 20
+    }
+  },
+  "model_tensor_sha256": {
+    "A": "fc52b7c04cded7e584d621606d8de65024ed3614d8d853263d01db5a5c5a87af",
+    "B": "e021df62f4d8aeb50352166fb6dc068515a5f7dbfc125cb084706d5698898057"
+  },
+  "training_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "comparison_training_seed": 101,
+  "data_seed": 7,
+  "data_sha256": {
+    "train": "950bbb3a5ce39b2ee4dab92c14726658eec4cb4a119eba6623721685f9ba3d59",
+    "test": "fdb20c9226b40a7306a70765be984c4bba1031c49e0d6ab685584fc414131781",
+    "train_factors": "f8a8fa8b5bfd11850c2501d1144d6c19dad5a715d11854054ab72fb909121f82",
+    "test_factors": "52d93b2528087b4369abbf2c9a2045e2b3e82f3daa16f2d3eea262ed6da68c12"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "gpu": "Tesla T4",
+    "gpu_memory_gib": 14.6,
+    "torch": "2.11.0+cu130",
+    "numpy": "2.4.6",
+    "Pillow": "11.3.0",
+    "cuda_version": "13.0",
+    "cudnn": 92700,
+    "driver": "580.82.07",
+    "torch_threads": 1,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": false
+  },
+  "optimizer": "Adam",
+  "lr": 0.002,
+  "batch": 128,
+  "dtype": "float32",
+  "epochs": 20,
+  "files": {
+    "comparison.png": {
+      "sha256": "01b0b78c8baaa876bb07b1b6e06c52b567b63162236070b39d8ecd065667e971",
+      "bytes": 53335
+    },
+    "demo/comparison.png": {
+      "sha256": "9e421ef21ed2dc79683354c0c990d94ca5629a7b44a7cae0b224905aa93a0cd3",
+      "bytes": 46988
+    },
+    "mean_image.png": {
+      "sha256": "1498c49cdd4a71c6389f0938097f42e7b93d19e838281ee5fc5c41d1e72188d2",
+      "bytes": 2008
+    },
+    "results.json": {
+      "sha256": "10dd52b6eb561af3a5ef16ac69a1c408cc5361bbbf241082511962a046da9179",
+      "bytes": 14595
+    },
+    "samples.png": {
+      "sha256": "20fa033df26ef5d634ccc3fe8663c2e79a7cb1b6b876972050886522e83c2a01",
+      "bytes": 5516
+    }
+  }
+}

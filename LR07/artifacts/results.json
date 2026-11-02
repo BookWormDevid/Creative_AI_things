@@ -1,0 +1,587 @@
+{
+  "lab": "ЛР 7. Построение автокодировщика",
+  "student": "Котов Дэвид Арсенович",
+  "variant": 27,
+  "date_utc": "2026-11-02T18:35:52.961184+00:00",
+  "kind": "two_discs",
+  "factor": "arch_conv_to_dense",
+  "mode_a": {
+    "arch": "conv",
+    "d": 8,
+    "loss": "mse",
+    "noise": 0.0,
+    "eval_noise": 0.0,
+    "n_train": 4096,
+    "epochs": 20
+  },
+  "mode_b": {
+    "arch": "dense",
+    "d": 8,
+    "loss": "mse",
+    "noise": 0.0,
+    "eval_noise": 0.0,
+    "n_train": 4096,
+    "epochs": 20
+  },
+  "data_seed": 7,
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "gpu": "Tesla T4",
+    "gpu_memory_gib": 14.6,
+    "torch": "2.11.0+cu130",
+    "numpy": "2.4.6",
+    "Pillow": "11.3.0",
+    "cuda_version": "13.0",
+    "cudnn": 92700,
+    "driver": "580.82.07",
+    "torch_threads": 1,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": false
+  },
+  "device": "cuda",
+  "data_sha256": {
+    "train": "950bbb3a5ce39b2ee4dab92c14726658eec4cb4a119eba6623721685f9ba3d59",
+    "test": "fdb20c9226b40a7306a70765be984c4bba1031c49e0d6ab685584fc414131781",
+    "train_factors": "f8a8fa8b5bfd11850c2501d1144d6c19dad5a715d11854054ab72fb909121f82",
+    "test_factors": "52d93b2528087b4369abbf2c9a2045e2b3e82f3daa16f2d3eea262ed6da68c12"
+  },
+  "data_shapes": {
+    "train": [
+      4096,
+      3,
+      32,
+      32
+    ],
+    "test": [
+      1024,
+      3,
+      32,
+      32
+    ]
+  },
+  "lab07_lib": {
+    "bytes": 8679,
+    "sha256": "d84b83a878f55e95289d76a788dc9fa84d3249d0d33aa719d9db8d6792fd2698"
+  },
+  "params_exact": {
+    "A": 101035,
+    "B": 1580552
+  },
+  "tolerance": {
+    "psnr": {
+      "type": "abs",
+      "value": 1.0
+    },
+    "gap": {
+      "type": "abs",
+      "value": 0.1
+    },
+    "params": {
+      "type": "rel",
+      "value": 0.2
+    },
+    "seconds": {
+      "type": "rel",
+      "value": 0.2
+    }
+  },
+  "summary": [
+    {
+      "metric": "psnr",
+      "A": 24.622640228271486,
+      "s": 0.48135350664402166,
+      "B": 24.57777099609375,
+      "delta": -0.044869232177735086,
+      "abs_delta_over_s": 0.09321471965699735,
+      "gt_2s": false,
+      "classification": "нейтрально"
+    },
+    {
+      "metric": "gap",
+      "A": 0.07437057495117187,
+      "s": 0.01627788994149438,
+      "B": 0.20266990661621093,
+      "delta": 0.12829933166503904,
+      "abs_delta_over_s": 7.881815894208007,
+      "gt_2s": true,
+      "classification": "ухудшение"
+    },
+    {
+      "metric": "params",
+      "A": 101.035,
+      "s": 0.0,
+      "B": 1580.552,
+      "delta": 1479.5169999999998,
+      "abs_delta_over_s": null,
+      "gt_2s": true,
+      "classification": "ухудшение"
+    },
+    {
+      "metric": "seconds",
+      "A": 1.8381787721999956,
+      "s": 0.08643411637724496,
+      "B": 1.1820735778000029,
+      "delta": -0.6561051943999927,
+      "abs_delta_over_s": 7.590812770462034,
+      "gt_2s": true,
+      "classification": "улучшение"
+    }
+  ],
+  "per_seed": [
+    {
+      "mode": "A",
+      "seed": 101,
+      "psnr": 24.75905990600586,
+      "gap": 0.06667327880859375,
+      "params": 101.035,
+      "seconds": 1.7980174109999894
+    },
+    {
+      "mode": "B",
+      "seed": 101,
+      "psnr": 24.655723571777344,
+      "gap": 0.20946884155273438,
+      "params": 1580.552,
+      "seconds": 1.1559194270000148
+    },
+    {
+      "mode": "A",
+      "seed": 102,
+      "psnr": 24.481487274169922,
+      "gap": 0.06444168090820312,
+      "params": 101.035,
+      "seconds": 1.7727983129999814
+    },
+    {
+      "mode": "B",
+      "seed": 102,
+      "psnr": 24.685768127441406,
+      "gap": 0.20435333251953125,
+      "params": 1580.552,
+      "seconds": 1.1387399969999876
+    },
+    {
+      "mode": "A",
+      "seed": 103,
+      "psnr": 23.945236206054688,
+      "gap": 0.0572967529296875,
+      "params": 101.035,
+      "seconds": 1.7578960030000133
+    },
+    {
+      "mode": "B",
+      "seed": 103,
+      "psnr": 24.40997314453125,
+      "gap": 0.19481658935546875,
+      "params": 1580.552,
+      "seconds": 1.1371305300000074
+    },
+    {
+      "mode": "A",
+      "seed": 104,
+      "psnr": 24.650070190429688,
+      "gap": 0.08966064453125,
+      "params": 101.035,
+      "seconds": 1.9430320559999927
+    },
+    {
+      "mode": "B",
+      "seed": 104,
+      "psnr": 24.40589714050293,
+      "gap": 0.2006378173828125,
+      "params": 1580.552,
+      "seconds": 1.3396991230000026
+    },
+    {
+      "mode": "A",
+      "seed": 105,
+      "psnr": 25.277347564697266,
+      "gap": 0.093780517578125,
+      "params": 101.035,
+      "seconds": 1.9191500780000013
+    },
+    {
+      "mode": "B",
+      "seed": 105,
+      "psnr": 24.73149299621582,
+      "gap": 0.2040729522705078,
+      "params": 1580.552,
+      "seconds": 1.1388788120000015
+    }
+  ],
+  "mean_image_psnr": 17.31043243408203,
+  "gain_over_mean_image": {
+    "A": 7.3122077941894545,
+    "B": 7.2673385620117195
+  },
+  "sensitivity": {
+    "psnr": {
+      "se": 0.17548517533273061,
+      "interval": [
+        -0.3958395828431963,
+        0.30610111848772614
+      ],
+      "by_tol": {
+        "0.25": "нейтрально",
+        "0.5": "нейтрально",
+        "1.0": "нейтрально",
+        "1.5": "нейтрально",
+        "2.0": "нейтрально"
+      }
+    },
+    "gap": {
+      "se": 0.007260543790308419,
+      "interval": [
+        0.1137782440844222,
+        0.1428204192456559
+      ],
+      "by_tol": {
+        "0.01": "ухудшение",
+        "0.02": "ухудшение",
+        "0.05": "ухудшение",
+        "0.1": "ухудшение",
+        "0.2": "нейтрально"
+      }
+    }
+  },
+  "latent_sweep": {
+    "architecture": "conv",
+    "seeds": [
+      101,
+      102,
+      103
+    ],
+    "psnr": {
+      "1": [
+        18.938264846801758,
+        18.937904357910156,
+        18.28547477722168
+      ],
+      "2": [
+        20.310726165771484,
+        20.681415557861328,
+        20.349746704101562
+      ],
+      "3": [
+        20.510313034057617,
+        21.038955688476562,
+        22.17221450805664
+      ],
+      "4": [
+        22.85485076904297,
+        21.691448211669922,
+        22.020612716674805
+      ],
+      "8": [
+        24.848583221435547,
+        24.345233917236328,
+        24.534317016601562
+      ]
+    }
+  },
+  "comparison_seed101": {
+    "per_image_psnr": {
+      "A": [
+        25.334672927856445,
+        24.373685836791992,
+        25.434606552124023,
+        24.801301956176758,
+        22.27545928955078,
+        25.148160934448242,
+        24.231185913085938,
+        25.339937210083008
+      ],
+      "B": [
+        24.900035858154297,
+        24.44423484802246,
+        24.938674926757812,
+        24.959327697753906,
+        23.430816650390625,
+        25.067028045654297,
+        24.000442504882812,
+        24.66402816772461
+      ]
+    },
+    "test_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source": "main_series"
+  },
+  "disc_geometry": {
+    "amber": {
+      "original_empty_masks": 0,
+      "original_mean_roundness": 0.9383194446563721,
+      "A": {
+        "cx": {
+          "bias": 0.012454260140657425,
+          "mae": 0.14961481094360352
+        },
+        "cy": {
+          "bias": 0.04636001214385033,
+          "mae": 0.1384602189064026
+        },
+        "r": {
+          "bias": -0.06335911154747009,
+          "mae": 0.11636372655630112
+        },
+        "area": {
+          "bias": -1.4384765625,
+          "mae": 2.6767578125
+        },
+        "mean_iou": 0.8902835845947266,
+        "empty_masks": 0,
+        "mean_roundness": 0.9039726257324219
+      },
+      "B": {
+        "cx": {
+          "bias": 0.07820764929056168,
+          "mae": 0.17376843094825745
+        },
+        "cy": {
+          "bias": -0.0022550863213837147,
+          "mae": 0.10083292424678802
+        },
+        "r": {
+          "bias": -0.113612100481987,
+          "mae": 0.12626127898693085
+        },
+        "area": {
+          "bias": -2.6103515625,
+          "mae": 2.8916015625
+        },
+        "mean_iou": 0.9087589979171753,
+        "empty_masks": 0,
+        "mean_roundness": 0.9338448643684387
+      }
+    },
+    "pink": {
+      "original_empty_masks": 0,
+      "original_mean_roundness": 0.941979169845581,
+      "A": {
+        "cx": {
+          "bias": 0.06038127839565277,
+          "mae": 0.3238316476345062
+        },
+        "cy": {
+          "bias": -0.055536482483148575,
+          "mae": 0.29321950674057007
+        },
+        "r": {
+          "bias": -0.41680291295051575,
+          "mae": 0.41730058193206787
+        },
+        "area": {
+          "bias": -8.9091796875,
+          "mae": 8.9208984375
+        },
+        "mean_iou": 0.7519152164459229,
+        "empty_masks": 0,
+        "mean_roundness": 0.8453645706176758
+      },
+      "B": {
+        "cx": {
+          "bias": 0.0091151874512434,
+          "mae": 0.30550098419189453
+        },
+        "cy": {
+          "bias": 0.015887470915913582,
+          "mae": 0.19997337460517883
+        },
+        "r": {
+          "bias": -0.28933289647102356,
+          "mae": 0.28950294852256775
+        },
+        "area": {
+          "bias": -6.44921875,
+          "mae": 6.453125
+        },
+        "mean_iou": 0.8201943635940552,
+        "empty_masks": 0,
+        "mean_roundness": 0.8805249929428101
+      }
+    }
+  },
+  "reproducibility": {
+    "seed": 101,
+    "first_psnr": 24.75905990600586,
+    "repeat_psnr": 24.811370849609375,
+    "delta_psnr": 0.052310943603515625,
+    "psnr_equal": false,
+    "within_base_s": true,
+    "weight_sha256": "b4a1222044e1460fccc527cec6427e154321a9607081eefd8b3b14526fb4c039",
+    "weights_equal": false,
+    "reconstruction_sha256": "5388e5fcf85f8f5921093fbed9922907c9c4674f3b7d0fab97fa446580665469",
+    "reconstructions_equal": false
+  },
+  "reference_comparison": {
+    "psnr": {
+      "own_A": 24.622640228271486,
+      "own_B": 24.57777099609375,
+      "own_delta": -0.044869232177735086,
+      "reference_A": 24.6785,
+      "reference_B": 24.5778,
+      "reference_delta": -0.10069999999999979,
+      "own_class": "нейтрально",
+      "reference_class": "нейтрально",
+      "own_gt_2s": false,
+      "reference_gt_2s": false,
+      "A_diff_over_reference_s": -0.13940546974922352,
+      "B_diff_over_reference_s": -7.23830952062858e-05
+    },
+    "gap": {
+      "own_A": 0.07437057495117187,
+      "own_B": 0.20266990661621093,
+      "own_delta": 0.12829933166503904,
+      "reference_A": 0.0778,
+      "reference_B": 0.2027,
+      "reference_delta": 0.1249,
+      "own_class": "ухудшение",
+      "reference_class": "ухудшение",
+      "own_gt_2s": true,
+      "reference_gt_2s": true,
+      "A_diff_over_reference_s": -0.2381545172797307,
+      "B_diff_over_reference_s": -0.0020898183186850625
+    },
+    "params": {
+      "own_A": 101.035,
+      "own_B": 1580.552,
+      "own_delta": 1479.5169999999998,
+      "reference_A": 101.035,
+      "reference_B": 1580.552,
+      "reference_delta": 1479.5169999999998,
+      "own_class": "ухудшение",
+      "reference_class": "ухудшение",
+      "own_gt_2s": true,
+      "reference_gt_2s": true
+    },
+    "seconds": {
+      "own_A": 1.8381787721999956,
+      "own_B": 1.1820735778000029,
+      "own_delta": -0.6561051943999927,
+      "reference_A": 2.1441,
+      "reference_B": 1.3936,
+      "reference_delta": -0.7505,
+      "own_class": "улучшение",
+      "reference_class": "улучшение",
+      "own_gt_2s": true,
+      "reference_gt_2s": true
+    }
+  },
+  "model_tensor_sha256": {
+    "A": "fc52b7c04cded7e584d621606d8de65024ed3614d8d853263d01db5a5c5a87af",
+    "B": "e021df62f4d8aeb50352166fb6dc068515a5f7dbfc125cb084706d5698898057"
+  },
+  "reconstruction_tensor_sha256": {
+    "A": "f9396ddc770c590e2682e23eed9c017e8451dc2273f5a4f6f5e1aec81dc9b02e",
+    "B": "2c6c633badab2646ead288087b8f6a13630df8270e81608666d600300e7de6b9"
+  },
+  "tensor_hash_definition": "SHA-256 concatenated contiguous CPU tensor bytes; weights in state_dict order; reconstructions NCHW float32",
+  "demonstration": {
+    "summary": [
+      {
+        "metric": "psnr",
+        "A": 26.037848281860352,
+        "s": 0.6210512582420458,
+        "B": 23.193035125732422,
+        "delta": -2.8448131561279304,
+        "ratio": 4.5806414822835855,
+        "gt_2s": true
+      },
+      {
+        "metric": "gap",
+        "A": 0.03967361450195313,
+        "s": 0.013542362373026936,
+        "B": 0.09790115356445313,
+        "delta": 0.0582275390625,
+        "ratio": 4.2996589116884785,
+        "gt_2s": true
+      },
+      {
+        "metric": "params",
+        "A": 101.035,
+        "s": 0.0,
+        "B": 88.741,
+        "delta": -12.293999999999997,
+        "ratio": null,
+        "gt_2s": true
+      },
+      {
+        "metric": "seconds",
+        "A": 1.875644877000002,
+        "s": 0.17899800340385572,
+        "B": 1.9882316540000033,
+        "delta": 0.1125867770000013,
+        "ratio": 0.6289834236082664,
+        "gt_2s": false
+      }
+    ],
+    "mean_image_psnr": 17.170730590820312,
+    "comparison": [
+      {
+        "metric": "psnr",
+        "A": 26.037848281860352,
+        "B": 23.193035125732422,
+        "delta": -2.8448131561279304,
+        "gt_2s": true,
+        "reference_A": 26.1262,
+        "reference_B": 23.1971,
+        "reference_delta": -2.929100000000002,
+        "reference_gt_2s": true
+      },
+      {
+        "metric": "gap",
+        "A": 0.03967361450195313,
+        "B": 0.09790115356445313,
+        "delta": 0.0582275390625,
+        "gt_2s": true,
+        "reference_A": 0.0411,
+        "reference_B": 0.0992,
+        "reference_delta": 0.0581,
+        "reference_gt_2s": true
+      },
+      {
+        "metric": "params",
+        "A": 101.035,
+        "B": 88.741,
+        "delta": -12.293999999999997,
+        "gt_2s": true,
+        "reference_A": 101.035,
+        "reference_B": 88.741,
+        "reference_delta": -12.293999999999997,
+        "reference_gt_2s": true
+      },
+      {
+        "metric": "seconds",
+        "A": 1.875644877000002,
+        "B": 1.9882316540000033,
+        "delta": 0.1125867770000013,
+        "gt_2s": false,
+        "reference_A": 2.1143,
+        "reference_B": 2.3265,
+        "reference_delta": 0.21219999999999972,
+        "reference_gt_2s": true
+      }
+    ]
+  },
+  "timing_s": {
+    "summary": 25.548141560999994,
+    "sweep": 28.589125587000012,
+    "total_notebook": 117.75127944900001
+  }
+}
