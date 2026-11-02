@@ -1,0 +1,502 @@
+{
+  "lab": "ЛР 6. Исследование параметров text-to-image генерации",
+  "author": "Котов Дэвид Арсенович",
+  "variant": 27,
+  "date_utc": "2026-11-02T16:57:44.893352+00:00",
+  "brief": "cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people",
+  "factor": "size_512_to_768",
+  "model_id": "stabilityai/sd-turbo",
+  "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "settings_A": {
+    "prompt": "cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people",
+    "steps": 1,
+    "guidance": 0.0,
+    "size": 512
+  },
+  "settings_B": {
+    "prompt": "cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people",
+    "steps": 1,
+    "guidance": 0.0,
+    "size": 768
+  },
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "device": "Tesla T4",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "driver": "580.82.07",
+    "gpu_memory_gib": 14.6,
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "diffusers": "0.40.0",
+      "transformers": "5.16.1",
+      "Pillow": "11.3.0",
+      "numpy": "2.1.3",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "scipy": "1.16.3"
+    }
+  },
+  "load": {
+    "pipe_seconds": 16.6,
+    "clip_seconds": 12.8,
+    "unet_dtype": "torch.float16",
+    "device": "cuda:0",
+    "clip_device": "cuda:0",
+    "model": "stabilityai/sd-turbo",
+    "model_revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
+  },
+  "library_sha256": {
+    "lab05_lib.py": {
+      "bytes": 6447,
+      "sha256": "4eb176506585ffcda1702605a767309fb451808229c3622f80ce882b7fa2ce1a",
+      "matches_methodical": true
+    },
+    "lab06_lib.py": {
+      "bytes": 6580,
+      "sha256": "c6d8473cf5a3000f4c27fbdef57916c2fbce347db272928d5c4729472f748bd8",
+      "matches_methodical": true
+    }
+  },
+  "tolerance": {
+    "clip": [
+      "abs",
+      1.0
+    ],
+    "edge": [
+      "rel",
+      0.1
+    ],
+    "contrast": [
+      "rel",
+      0.1
+    ],
+    "seconds": [
+      "rel",
+      0.2
+    ]
+  },
+  "hypothesis": {
+    "clip": "нейтрально",
+    "edge": "снижение >10 % на исходном размере",
+    "contrast": "нейтрально",
+    "seconds": "ухудшение (рост >20 %)"
+  },
+  "rows": [
+    {
+      "metric": "clip",
+      "A": 27.634310722351074,
+      "s": 1.0640025684031615,
+      "B": 28.05882692337036,
+      "delta": 0.4245162010192871,
+      "delta_rel_pct": 1.536192472048639,
+      "ratio": 0.3989804288314777,
+      "sig_2s": false,
+      "verdict": "нейтрально",
+      "agree_2s_tol": true
+    },
+    {
+      "metric": "edge",
+      "A": 0.03532255799396396,
+      "s": 0.012309371373534656,
+      "B": 0.030544189137529088,
+      "delta": -0.004778368856434869,
+      "delta_rel_pct": -13.527810916897394,
+      "ratio": 0.3881895111807609,
+      "sig_2s": false,
+      "verdict": "ухудшение",
+      "agree_2s_tol": false
+    },
+    {
+      "metric": "contrast",
+      "A": 0.13451651547728843,
+      "s": 0.019872759878483078,
+      "B": 0.10766201744610895,
+      "delta": -0.02685449803117948,
+      "delta_rel_pct": -19.963718161963207,
+      "ratio": 1.351322020463588,
+      "sig_2s": false,
+      "verdict": "ухудшение",
+      "agree_2s_tol": false
+    },
+    {
+      "metric": "seconds",
+      "A": 0.30702743340000327,
+      "s": 0.030594327745825173,
+      "B": 0.6593282099999896,
+      "delta": 0.3523007765999864,
+      "delta_rel_pct": 114.74569965902683,
+      "ratio": 11.51523182750961,
+      "sig_2s": true,
+      "verdict": "ухудшение",
+      "agree_2s_tol": true
+    }
+  ],
+  "common_scale": {
+    "edge@512": {
+      "A": 0.03532255799396396,
+      "s": 0.012309371373534656,
+      "B": 0.034939291566132825,
+      "delta": -0.0003832664278311318,
+      "delta_rel_pct": -1.0850472038197962,
+      "ratio": 0.03113614954011061,
+      "sig_2s": false,
+      "verdict": "нейтрально"
+    },
+    "edge@768": {
+      "A": 0.029429225336215014,
+      "s": 0.009506703289947736,
+      "B": 0.030544189137529088,
+      "delta": 0.0011149638013140742,
+      "delta_rel_pct": 3.7886277622877897,
+      "ratio": 0.1172818554769688,
+      "sig_2s": false,
+      "verdict": "нейтрально"
+    },
+    "contrast@512": {
+      "A": 0.13451651547728843,
+      "s": 0.019872759878483078,
+      "B": 0.1061422368132054,
+      "delta": -0.028374278664083027,
+      "delta_rel_pct": -21.093527856714143,
+      "ratio": 1.4277975901477498,
+      "sig_2s": false,
+      "verdict": "ухудшение"
+    },
+    "contrast@768": {
+      "A": 0.13433012226335167,
+      "s": 0.01986543315600696,
+      "B": 0.10766201744610895,
+      "delta": -0.026668104817242716,
+      "delta_rel_pct": -19.852661761864848,
+      "ratio": 1.342437620554916,
+      "sig_2s": false,
+      "verdict": "ухудшение"
+    },
+    "edge: только масштаб A 512 -> A 768": {
+      "A": 0.03532255799396396,
+      "s": 0.012309371373534656,
+      "B": 0.029429225336215014,
+      "delta": -0.005893332657748943,
+      "delta_rel_pct": -16.684331465337298,
+      "ratio": 0.47876796295379487,
+      "sig_2s": false,
+      "verdict": "не классифицируется"
+    }
+  },
+  "sensitivity": {
+    "clip": {
+      "half": "нейтрально",
+      "base": "нейтрально",
+      "double": "нейтрально",
+      "flip_threshold": 0.4245162010192871,
+      "flip_in_units_of_tol": 0.4245162010192871
+    },
+    "edge": {
+      "half": "ухудшение",
+      "base": "ухудшение",
+      "double": "нейтрально",
+      "flip_threshold": 0.13527810916897393,
+      "flip_in_units_of_tol": 1.3527810916897391
+    },
+    "contrast": {
+      "half": "ухудшение",
+      "base": "ухудшение",
+      "double": "нейтрально",
+      "flip_threshold": 0.19963718161963206,
+      "flip_in_units_of_tol": 1.9963718161963206
+    },
+    "seconds": {
+      "half": "ухудшение",
+      "base": "ухудшение",
+      "double": "ухудшение",
+      "flip_threshold": 1.1474569965902683,
+      "flip_in_units_of_tol": 5.7372849829513415
+    }
+  },
+  "per_seed": [
+    {
+      "mode": "A",
+      "seed": 101,
+      "size": 512,
+      "png_sha256": "d41f2c83f6c305e8714b7ae13f0047274218a407ff375c2916092a5059c0f614",
+      "clip": 26.845741271972656,
+      "edge": 0.048908247611285774,
+      "contrast": 0.13765790424561875,
+      "seconds": 0.2928922280000279
+    },
+    {
+      "mode": "B",
+      "seed": 101,
+      "size": 768,
+      "png_sha256": "dd073dfc424b5d8b069fe1cb2b73541c7bcda6d87fbc6d8f77956a6154d1ffee",
+      "clip": 27.800482511520386,
+      "edge": 0.03052740129825627,
+      "contrast": 0.10044633501221047,
+      "seconds": 0.6656158320000145
+    },
+    {
+      "mode": "A",
+      "seed": 102,
+      "size": 512,
+      "png_sha256": "0dd89d0891241593b29f789cca374840534eeecf633791d3bdc1b94831f906a0",
+      "clip": 26.33734941482544,
+      "edge": 0.03891609530531058,
+      "contrast": 0.16582556009892457,
+      "seconds": 0.3599361189999968
+    },
+    {
+      "mode": "B",
+      "seed": 102,
+      "size": 768,
+      "png_sha256": "a29ed70be528ba09b4ad8d8a7b26bce673199ce14376a9e2e7b95ad8bb31ec5d",
+      "clip": 29.41765785217285,
+      "edge": 0.029891142983251795,
+      "contrast": 0.12314597892911869,
+      "seconds": 0.6710912399999529
+    },
+    {
+      "mode": "A",
+      "seed": 103,
+      "size": 512,
+      "png_sha256": "7a3e3832fee45d0f5c4426c740a8a3b0a48a9c2b856c0c4fcb84c6f2600496d6",
+      "clip": 28.162407875061035,
+      "edge": 0.043133989169232306,
+      "contrast": 0.13436514519306955,
+      "seconds": 0.28222146899997824
+    },
+    {
+      "mode": "B",
+      "seed": 103,
+      "size": 768,
+      "png_sha256": "f7aca1f0e1fae781f7d4baa2f69889dea48797a65c693a11e9e9238aa2dd233a",
+      "clip": 28.398102521896362,
+      "edge": 0.03106937777905575,
+      "contrast": 0.11098714935879364,
+      "seconds": 0.6472859190000122
+    },
+    {
+      "mode": "A",
+      "seed": 104,
+      "size": 512,
+      "png_sha256": "2953a430c9704890291713c7950360591434eac3ca4647a77535c3e3afa54de4",
+      "clip": 29.018324613571167,
+      "edge": 0.027029196839317413,
+      "contrast": 0.1181873388198792,
+      "seconds": 0.3040459810000016
+    },
+    {
+      "mode": "B",
+      "seed": 104,
+      "size": 768,
+      "png_sha256": "1611ef79f4602ecdb95064d2ffabd9389f4d7d72b4e5d6d2e1fcf0a88f6293a6",
+      "clip": 25.508588552474976,
+      "edge": 0.030872725132858585,
+      "contrast": 0.09158030351646822,
+      "seconds": 0.6566341689999717
+    },
+    {
+      "mode": "A",
+      "seed": 105,
+      "size": 512,
+      "png_sha256": "391cd5b78473ffa5a52f36cb3949bbb4cbe221d8c5e2d11bceb28c60a4ffbd63",
+      "clip": 27.807730436325073,
+      "edge": 0.018625261044673713,
+      "contrast": 0.11654662902895024,
+      "seconds": 0.29604137000001174
+    },
+    {
+      "mode": "B",
+      "seed": 105,
+      "size": 768,
+      "png_sha256": "2214fdcb71b5411a94b805f1ded5451727bc177c32bbea4d48a7c7e42828897d",
+      "clip": 29.16930317878723,
+      "edge": 0.030360298494223018,
+      "contrast": 0.11215032041395369,
+      "seconds": 0.656013889999997
+    }
+  ],
+  "criterion_disagreements": [
+    {
+      "metric": "edge",
+      "note": "вне допуска, но не значимо по 2s"
+    },
+    {
+      "metric": "contrast",
+      "note": "вне допуска, но не значимо по 2s"
+    }
+  ],
+  "repeat_seed101": {
+    "A": true,
+    "B": true
+  },
+  "guidance_error": {
+    "sha_equal_0_vs_1": true,
+    "cfg_at_1": false,
+    "cfg_at_3": true,
+    "psnr_0_vs_3_db": 10.61,
+    "sha_x0": "d41f2c83f6c305e8714b7ae13f0047274218a407ff375c2916092a5059c0f614",
+    "x0_equals_series_A_seed101": true
+  },
+  "demonstration": {
+    "variant": 1,
+    "ctx": 1,
+    "factor": "steps_1_to_4",
+    "rows": [
+      [
+        "clip",
+        30.797866582870483,
+        1.4309017437110398,
+        30.29200315475464,
+        -0.5058634281158447,
+        0.35352771798564536,
+        false
+      ],
+      [
+        "edge",
+        0.045660816369404854,
+        0.006960480109480653,
+        0.09197612883167525,
+        0.04631531246227039,
+        6.654039913020619,
+        true
+      ],
+      [
+        "contrast",
+        0.1922867990891968,
+        0.02249353315005205,
+        0.2778616052724856,
+        0.0855748061832888,
+        3.804418168209861,
+        true
+      ],
+      [
+        "seconds",
+        0.2854397383999867,
+        0.0018569463496843834,
+        0.5269618271999889,
+        0.24152208880000214,
+        130.0641178142021,
+        true
+      ]
+    ]
+  },
+  "demonstration_comparison": [
+    {
+      "metric": "clip",
+      "A_ref": 30.796,
+      "A": 30.797866582870483,
+      "B_ref": 30.292,
+      "B": 30.29200315475464,
+      "sig_ref": false,
+      "sig": false,
+      "verdict_ref": "в допуске",
+      "verdict": "в допуске",
+      "dev_A_pct": 0.0060611211536693846,
+      "dev_B_pct": 1.0414481173512014e-05,
+      "conclusion_match": true
+    },
+    {
+      "metric": "edge",
+      "A_ref": 0.0457,
+      "A": 0.045660816369404854,
+      "B_ref": 0.092,
+      "B": 0.09197612883167525,
+      "sig_ref": true,
+      "sig": true,
+      "verdict_ref": "вне допуска",
+      "verdict": "вне допуска",
+      "dev_A_pct": -0.08574098598499724,
+      "dev_B_pct": -0.025946922092121377,
+      "conclusion_match": true
+    },
+    {
+      "metric": "contrast",
+      "A_ref": 0.1923,
+      "A": 0.1922867990891968,
+      "B_ref": 0.2778,
+      "B": 0.2778616052724856,
+      "sig_ref": true,
+      "sig": true,
+      "verdict_ref": "вне допуска",
+      "verdict": "вне допуска",
+      "dev_A_pct": -0.00686474820759315,
+      "dev_B_pct": 0.022176124004899125,
+      "conclusion_match": true
+    },
+    {
+      "metric": "seconds",
+      "A_ref": 0.2854,
+      "A": 0.2854397383999867,
+      "B_ref": 0.5266,
+      "B": 0.5269618271999889,
+      "sig_ref": true,
+      "sig": true,
+      "verdict_ref": "вне допуска",
+      "verdict": "вне допуска",
+      "ratio_BA_ref": 1.8451296426068675,
+      "ratio_BA": 1.8461403802912586,
+      "conclusion_match": true
+    }
+  ],
+  "demonstration_script": {
+    "summary": {
+      "variant": 1,
+      "ctx": 1,
+      "factor": "steps_1_to_4",
+      "rows": [
+        [
+          "clip",
+          30.797866582870483,
+          1.4309017437110398,
+          30.29200315475464,
+          -0.5058634281158447,
+          0.35352771798564536,
+          false
+        ],
+        [
+          "edge",
+          0.045660816369404854,
+          0.006960480109480653,
+          0.09197612883167525,
+          0.04631531246227039,
+          6.654039913020619,
+          true
+        ],
+        [
+          "contrast",
+          0.1922867990891968,
+          0.02249353315005205,
+          0.2778616052724856,
+          0.0855748061832888,
+          3.804418168209861,
+          true
+        ],
+        [
+          "seconds",
+          0.28909745920000207,
+          0.001896916992136481,
+          0.5335615265999877,
+          0.2444640673999856,
+          128.8744148602137,
+          true
+        ]
+      ]
+    },
+    "sha_equal_guidance_0_vs_1": true,
+    "psnr_guidance_0_vs_3": 11.605078740312596
+  },
+  "series_seconds": 13.402339214999984
+}
