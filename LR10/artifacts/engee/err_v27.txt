@@ -1,0 +1,16 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Cannot initialize model with low cpu memory usage because `accelerate` was not found in the environment. Defaulting to `low_cpu_mem_usage=False`. It is strongly recommended to install `accelerate` for faster and less memory-intense model loading. You can do so with: 
+```
+pip install accelerate
+```
+.
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  40%|████      | 2/5 [00:01<00:02,  1.23it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+Loading pipeline components...:  60%|██████    | 3/5 [00:01<00:01,  1.93it/s]Loading pipeline components...:  80%|████████  | 4/5 [00:01<00:00,  2.74it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:16<00:00,  5.41s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:16<00:00,  3.34s/it]
+Cannot initialize model with low cpu memory usage because `accelerate` was not found in the environment. Defaulting to `low_cpu_mem_usage=False`. It is strongly recommended to install `accelerate` for faster and less memory-intense model loading. You can do so with: 
+```
+pip install accelerate
+```
+.
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files:  67%|██████▋   | 8/12 [00:01<00:00,  4.44it/s]Fetching 12 files:  83%|████████▎ | 10/12 [00:15<00:03,  1.54s/it]Fetching 12 files:  92%|█████████▏| 11/12 [00:30<00:02,  2.74s/it]Fetching 12 files: 100%|██████████| 12/12 [00:41<00:00,  3.47s/it]Fetching 12 files: 100%|██████████| 12/12 [00:41<00:00,  3.47s/it]
+Keyword arguments {'safety_checker': None, 'requires_safety_checker': False} are not expected by AmusedPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  40%|████      | 2/5 [00:13<00:19,  6.59s/it]Loading pipeline components...:  60%|██████    | 3/5 [00:13<00:07,  3.99s/it]Loading pipeline components...:  80%|████████  | 4/5 [00:13<00:02,  2.54s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:16<00:00,  2.58s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:16<00:00,  3.26s/it]

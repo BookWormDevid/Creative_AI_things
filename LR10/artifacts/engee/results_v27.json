@@ -1,0 +1,288 @@
+{
+ "libraries": {
+  "lab10_lib.py": {
+   "bytes": 8843,
+   "sha256": "b53293ebd2422295cfa2fd01e4dcc5f8eaef440c0802a80803d3771c19ce2f6c"
+  },
+  "lr10_variant27.py": {
+   "bytes": 9110,
+   "sha256": "2e198947a1b7d73043f85185bfac6f6147c170e03820e3eb12db981c87979619"
+  }
+ },
+ "schedulers": {
+  "turbo": "EulerDiscreteScheduler",
+  "amused": "AmusedScheduler"
+ },
+ "tolerance": {
+  "clip_brief": 1.0,
+  "clip_text": 1.0,
+  "edge": 0.1,
+  "contrast": 0.1,
+  "seconds_factor": 1.5
+ },
+ "classification": {
+  "clip_brief": {
+   "sig2s": false,
+   "practical": true,
+   "label": "только допуск"
+  },
+  "clip_text": {
+   "sig2s": false,
+   "practical": false,
+   "label": "ни то ни другое"
+  },
+  "edge": {
+   "sig2s": false,
+   "practical": true,
+   "label": "только допуск"
+  },
+  "contrast": {
+   "sig2s": true,
+   "practical": true,
+   "label": "значимо и важно"
+  },
+  "seconds": {
+   "sig2s": true,
+   "practical": true,
+   "label": "значимо и важно"
+  }
+ },
+ "sensitivity": {
+  "clip_brief": {
+   "0.5": true,
+   "1.0": true,
+   "2.0": true
+  },
+  "clip_text": {
+   "0.5": true,
+   "1.0": false,
+   "2.0": false
+  },
+  "edge": {
+   "0.5": true,
+   "1.0": true,
+   "2.0": true
+  },
+  "contrast": {
+   "0.5": true,
+   "1.0": true,
+   "2.0": true
+  },
+  "seconds": {
+   "1.25": true,
+   "1.5": true,
+   "2.0": true
+  }
+ },
+ "new_session_checked": false,
+ "variant": 27,
+ "ctx": 5,
+ "pair": [
+  "turbo",
+  "amused"
+ ],
+ "brief": "cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people",
+ "env": {
+  "engee": "26.10.2-H2",
+  "julia": "1.12.6",
+  "device": "cpu",
+  "dtype": "float32",
+  "date_utc": "2026-11-04 14:02:00",
+  "python": "3.11.11",
+  "torch": "2.4.1+cpu",
+  "diffusers": "0.32.2",
+  "transformers": "4.57.6",
+  "numpy": "2.1.3",
+  "scipy": "1.15.2",
+  "pillow": "11.1.0",
+  "huggingface_hub": "0.36.2",
+  "cuda": false,
+  "torch_threads": 4,
+  "cpu": "Intel(R) Xeon(R) Platinum 8180 CPU @ 2.50GHz",
+  "cpu_count": 112,
+  "clip": "openai/clip-vit-large-patch14",
+  "clip_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+  "seeds": [
+   101,
+   102,
+   103,
+   104,
+   105
+  ],
+  "models": {
+   "turbo": {
+    "repo": "stabilityai/sd-turbo",
+    "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+    "steps": 1,
+    "guidance": 0.0,
+    "size": 512,
+    "note": "дистиллированная SD 2.1, 1 шаг, без управления"
+   },
+   "amused": {
+    "repo": "amused/amused-256",
+    "revision": "09b6259bf96dbe6d70a852b70812420fe02df55e",
+    "steps": 12,
+    "guidance": 10.0,
+    "size": 256,
+    "note": "маскированные токены (не диффузия), 256×256, 12 шагов"
+   }
+  }
+ },
+ "load_seconds": {
+  "turbo": 16.948419734835625,
+  "amused": 58.78947552666068
+ },
+ "variant_summary_seconds": 441.53340800106525,
+ "peak_rss_gb": 7.817779541015625,
+ "rows": [
+  [
+   "clip_brief",
+   23.314595222473145,
+   2.2042024909750246,
+   25.6959131360054,
+   2.381317913532257,
+   1.0803535171030887,
+   false
+  ],
+  [
+   "clip_text",
+   15.364864766597748,
+   0.6724427553263872,
+   16.309868693351746,
+   0.9450039267539978,
+   1.4053299247685642,
+   false
+  ],
+  [
+   "edge",
+   0.03936662186220158,
+   0.010978190899515959,
+   0.03114913702978221,
+   -0.00821748483241937,
+   0.7485281416250185,
+   false
+  ],
+  [
+   "contrast",
+   0.12969891841664732,
+   0.01335258616702955,
+   0.32140387406544024,
+   0.19170495564879292,
+   14.357140500778367,
+   true
+  ],
+  [
+   "seconds",
+   18.484078127145768,
+   0.9255099873275108,
+   37.22320869974792,
+   18.739130572602154,
+   20.247356408019968,
+   true
+  ]
+ ],
+ "rows_recomputed_match": true,
+ "time_ratio": 2.0137984942339004,
+ "per_seed": [
+  {
+   "model": "turbo",
+   "seed": 101,
+   "clip_brief": 20.740550756454468,
+   "clip_text": 15.908096730709076,
+   "edge": 0.037797455793203226,
+   "contrast": 0.13896357753134506,
+   "seconds": 18.505713189020753,
+   "pixels_sha256": "c8cbd85b796809f7ab9f6cfca5dad6a32f8df2d311ddcbafbff086bf1d4f7f87"
+  },
+  {
+   "model": "turbo",
+   "seed": 102,
+   "clip_brief": 23.518507182598114,
+   "clip_text": 14.545382559299469,
+   "edge": 0.03602491821319858,
+   "contrast": 0.13730460114180354,
+   "seconds": 19.477952076122165,
+   "pixels_sha256": "f31cf37a7143b8da4fc69caab0fecb37433e362a4fe50cab133559c3235042ec"
+  },
+  {
+   "model": "turbo",
+   "seed": 103,
+   "clip_brief": 23.642446100711823,
+   "clip_text": 14.877285063266754,
+   "edge": 0.05000908815176129,
+   "contrast": 0.12402371702500994,
+   "seconds": 19.270371237769723,
+   "pixels_sha256": "f7f2e95250085b0a7b43f1cafecc1aca6b0c6e988535eee49020aa07ce990cbd"
+  },
+  {
+   "model": "turbo",
+   "seed": 104,
+   "clip_brief": 22.036409378051758,
+   "clip_text": 15.351423621177673,
+   "edge": 0.023486105985920484,
+   "contrast": 0.10869660191904901,
+   "seconds": 17.269713236019015,
+   "pixels_sha256": "8b22fce7e74581dcd0b1e9475703712a577fea02ec61e8f583b948fe3ba834d8"
+  },
+  {
+   "model": "turbo",
+   "seed": 105,
+   "clip_brief": 26.63506269454956,
+   "clip_text": 16.142135858535767,
+   "edge": 0.049515541166924304,
+   "contrast": 0.13950609446602927,
+   "seconds": 17.89664089679718,
+   "pixels_sha256": "fd33fa1952e2e8ef0bd41fea277cb07b4aa550db95641d5e462c1785992c91fa"
+  },
+  {
+   "model": "amused",
+   "seed": 101,
+   "clip_brief": 25.84133744239807,
+   "clip_text": 16.21999740600586,
+   "edge": 0.027033924559889476,
+   "contrast": 0.29702191958127966,
+   "seconds": 33.235740415751934,
+   "pixels_sha256": "53cfdfff63a75607343cfd975ac0b63fb4f17cabf8af9973661986bba49b72c8"
+  },
+  {
+   "model": "amused",
+   "seed": 102,
+   "clip_brief": 25.277522206306458,
+   "clip_text": 16.252081096172333,
+   "edge": 0.031092964586858136,
+   "contrast": 0.31025604853815625,
+   "seconds": 33.60528942383826,
+   "pixels_sha256": "90c36309a718773cc738fd788343076fa67f4f38bb668f51a94ee79b7817dc7e"
+  },
+  {
+   "model": "amused",
+   "seed": 103,
+   "clip_brief": 21.98278158903122,
+   "clip_text": 15.409906208515167,
+   "edge": 0.03418667346622692,
+   "contrast": 0.32318202248026345,
+   "seconds": 37.305990820750594,
+   "pixels_sha256": "fc61f07733da8067d84dae7df56ee2ec7b0b2d5b4e08711d4949b8ebe0421629"
+  },
+  {
+   "model": "amused",
+   "seed": 104,
+   "clip_brief": 27.320492267608643,
+   "clip_text": 17.91931539773941,
+   "edge": 0.03073617561639238,
+   "contrast": 0.348322598281949,
+   "seconds": 41.77659457735717,
+   "pixels_sha256": "0e95b4ac1822f5b43ec2f469a0c91fe500bce64ef5908da2dc299e398cb778bd"
+  },
+  {
+   "model": "amused",
+   "seed": 105,
+   "clip_brief": 28.057432174682617,
+   "clip_text": 15.748043358325958,
+   "edge": 0.03269594691954413,
+   "contrast": 0.3282367814455529,
+   "seconds": 40.19242826104164,
+   "pixels_sha256": "23ca396fc828596965963eb52f0b422aba5cc0de04a685f6c9fef7d6dd2d85f2"
+  }
+ ]
+}

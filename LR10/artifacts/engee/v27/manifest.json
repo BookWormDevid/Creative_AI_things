@@ -1,0 +1,197 @@
+{
+  "variant": 27,
+  "brief": "cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people",
+  "models": {
+    "turbo": {
+      "repo": "stabilityai/sd-turbo",
+      "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+      "steps": 1,
+      "guidance": 0.0,
+      "size": 512,
+      "note": "дистиллированная SD 2.1, 1 шаг, без управления"
+    },
+    "amused": {
+      "repo": "amused/amused-256",
+      "revision": "09b6259bf96dbe6d70a852b70812420fe02df55e",
+      "steps": 12,
+      "guidance": 10.0,
+      "size": 256,
+      "note": "маскированные токены (не диффузия), 256×256, 12 шагов"
+    }
+  },
+  "clip": {
+    "id": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41"
+  },
+  "environment": {
+    "engee": "26.10.2-H2",
+    "julia": "1.12.6",
+    "device": "cpu",
+    "dtype": "float32",
+    "date_utc": "2026-11-04 14:02:00",
+    "python": "3.11.11",
+    "torch": "2.4.1+cpu",
+    "diffusers": "0.32.2",
+    "transformers": "4.57.6",
+    "numpy": "2.1.3",
+    "scipy": "1.15.2",
+    "pillow": "11.1.0",
+    "huggingface_hub": "0.36.2",
+    "cuda": false,
+    "torch_threads": 4,
+    "cpu": "Intel(R) Xeon(R) Platinum 8180 CPU @ 2.50GHz",
+    "cpu_count": 112,
+    "clip": "openai/clip-vit-large-patch14",
+    "clip_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "models": {
+      "turbo": {
+        "repo": "stabilityai/sd-turbo",
+        "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2",
+        "steps": 1,
+        "guidance": 0.0,
+        "size": 512,
+        "note": "дистиллированная SD 2.1, 1 шаг, без управления"
+      },
+      "amused": {
+        "repo": "amused/amused-256",
+        "revision": "09b6259bf96dbe6d70a852b70812420fe02df55e",
+        "steps": 12,
+        "guidance": 10.0,
+        "size": 256,
+        "note": "маскированные токены (не диффузия), 256×256, 12 шагов"
+      }
+    }
+  },
+  "libraries": {
+    "lab10_lib.py": {
+      "bytes": 8843,
+      "sha256": "b53293ebd2422295cfa2fd01e4dcc5f8eaef440c0802a80803d3771c19ce2f6c"
+    },
+    "lr10_variant27.py": {
+      "bytes": 9110,
+      "sha256": "2e198947a1b7d73043f85185bfac6f6147c170e03820e3eb12db981c87979619"
+    }
+  },
+  "schedulers": {
+    "turbo": "EulerDiscreteScheduler",
+    "amused": "AmusedScheduler"
+  },
+  "generator_device": "cpu",
+  "dtype": "float32",
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "files": {
+    "amused_s101.jpg": {
+      "bytes": 13296,
+      "sha256": "296006029c0840adaf141c7904ed426fc40f774a45e1e136bb86195695b4104a"
+    },
+    "amused_s101.png": {
+      "bytes": 79630,
+      "sha256": "ed1c8176c0b5b954e15f086a419655edae2c5af5639fbc63708df255a4d89f5f"
+    },
+    "amused_s102.jpg": {
+      "bytes": 16561,
+      "sha256": "d8afb60c74193dfd1e44f02170ce22a1ec145a8913d545c7a197b5f4d1920297"
+    },
+    "amused_s102.png": {
+      "bytes": 92723,
+      "sha256": "747c42b58396f204b540b9f6af7237edc961727a8bf47ecf7ca8455effc2d18c"
+    },
+    "amused_s103.jpg": {
+      "bytes": 15128,
+      "sha256": "bf396abf8c0356342a4de6e1acac912d4c06a8fdbcf549be3b8f2d61b5ac14bb"
+    },
+    "amused_s103.png": {
+      "bytes": 83025,
+      "sha256": "6e557e352ed170ae94e9ee3a01676be39497b8d077bed3d05ed06e3599cd143a"
+    },
+    "amused_s104.jpg": {
+      "bytes": 17463,
+      "sha256": "68213a7cde9b6c079bf3ddab666428e47578815d27939032712c3c4e87b7a423"
+    },
+    "amused_s104.png": {
+      "bytes": 94626,
+      "sha256": "d60b904a5b25b3914a45bf6c44f1aad6416b096235aca3a425ce97ad854ed980"
+    },
+    "amused_s105.jpg": {
+      "bytes": 15467,
+      "sha256": "29490abaae654925298315d48ec133a9f712eecaf17f70bad549873750bd5a44"
+    },
+    "amused_s105.png": {
+      "bytes": 90429,
+      "sha256": "2b9950712551271c2c69f3e8c04d7db3b304ec199ae7229725dcde63e98fee8e"
+    },
+    "blind_101.png": {
+      "bytes": 425752,
+      "sha256": "5472a150aa47c016439b55b8f686790de0e6ddae3e85e00d6ab4d8fa1cd0c9c2"
+    },
+    "blind_102.png": {
+      "bytes": 470781,
+      "sha256": "131fbbadfb96a81f114fce4df659b1a473b691288aa0f0a50d87c92c3489d703"
+    },
+    "blind_103.png": {
+      "bytes": 460182,
+      "sha256": "ba075c97aded07670da1fae77261f67b419f37a24ddbabc23538675b6005c2b4"
+    },
+    "blind_104.png": {
+      "bytes": 458411,
+      "sha256": "938834a54c0eb06a8db0ad5064899bbb02082b72583381f799cf631a745e7b57"
+    },
+    "blind_105.png": {
+      "bytes": 451237,
+      "sha256": "d814c33a3c5e640d5fbbf18a29d533c239ca5c4597aa320d389c329eb5ab43e2"
+    },
+    "turbo_s101.jpg": {
+      "bytes": 89661,
+      "sha256": "c1cfe213b8283eb011901322c8ce897361c8353582de47fe5f9ae356530c0d7b"
+    },
+    "turbo_s101.png": {
+      "bytes": 477230,
+      "sha256": "f9d31d3954f39b7bdc178392dee0fdda94c8be108d25a39909aee748c53d2086"
+    },
+    "turbo_s102.jpg": {
+      "bytes": 89720,
+      "sha256": "bb55c7349d017116f8cf46b9d39c522eaa0a4989f93db931eda13e797c81c941"
+    },
+    "turbo_s102.png": {
+      "bytes": 503487,
+      "sha256": "34f6ec8435de9b99053e3667234bf874bb41031dc9b95423d62c364966331cad"
+    },
+    "turbo_s103.jpg": {
+      "bytes": 103021,
+      "sha256": "8797f2a89c35411af3c00542b31010dd3145a125ab6beac4bedf09e156a10126"
+    },
+    "turbo_s103.png": {
+      "bytes": 541617,
+      "sha256": "e74c1734794c84975a068c02685b94cd31c58ba304633d9d06d88afaf8ff027a"
+    },
+    "turbo_s104.jpg": {
+      "bytes": 96062,
+      "sha256": "d813951e4bd517a664c4527855a49d21a96e431926cad7d9f74402f9f89227d8"
+    },
+    "turbo_s104.png": {
+      "bytes": 506749,
+      "sha256": "e9cd1c7a7420176d8c7de75a7bb6292d08eb85d6fce207d9b016678e04002892"
+    },
+    "turbo_s105.jpg": {
+      "bytes": 83807,
+      "sha256": "369bad49606a0a0c70aa3d8549394bd3a8e7c8085df69bb77c6805a41696e68b"
+    },
+    "turbo_s105.png": {
+      "bytes": 482135,
+      "sha256": "3ee2d1da4b9af18d1a57df5fbb3ff2a68a31d838d48205275a87a414e57bfe3b"
+    }
+  }
+}

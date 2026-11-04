@@ -1,0 +1,43 @@
+Среда: {"engee": "26.10.2-H2", "julia": "1.12.6", "device": "cpu", "dtype": "float32", "date_utc": "2026-11-04 14:02:00", "python": "3.11.11", "torch": "2.4.1+cpu", "diffusers": "0.32.2", "transformers": "4.57.6", "numpy": "2.1.3", "scipy": "1.15.2", "pillow": "11.1.0", "huggingface_hub": "0.36.2", "cuda": false, "torch_threads": 4, "cpu": "Intel(R) Xeon(R) Platinum 8180 CPU @ 2.50GHz", "cpu_count": 112, "clip": "openai/clip-vit-large-patch14", "clip_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41", "seeds": [101, 102, 103, 104, 105], "models": {"turbo": {"repo": "stabilityai/sd-turbo", "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2", "steps": 1, "guidance": 0.0, "size": 512, "note": "дистиллированная SD 2.1, 1 шаг, без управления"}, "amused": {"repo": "amused/amused-256", "revision": "09b6259bf96dbe6d70a852b70812420fe02df55e", "steps": 12, "guidance": 10.0, "size": 256, "note": "маскированные токены (не диффузия), 256×256, 12 шагов"}}}
+Вариант 27: бриф 5, пара 3: A = turbo, B = amused
+бриф: 'cover art for an electronic music release, brushed metal surface with iridescent reflections, macro photography style, strong contrast, no text, no logo, no people'
+загрузка turbo: 16.9 с; планировщик EulerDiscreteScheduler
+  turbo seed 101: clip_brief 20.74  clip_text 15.91  edge 0.0378  contrast 0.1390  18.5 с
+  turbo seed 102: clip_brief 23.52  clip_text 14.55  edge 0.0360  contrast 0.1373  19.5 с
+  turbo seed 103: clip_brief 23.64  clip_text 14.88  edge 0.0500  contrast 0.1240  19.3 с
+  turbo seed 104: clip_brief 22.04  clip_text 15.35  edge 0.0235  contrast 0.1087  17.3 с
+  turbo seed 105: clip_brief 26.64  clip_text 16.14  edge 0.0495  contrast 0.1395  17.9 с
+загрузка amused: 58.8 с; планировщик AmusedScheduler
+  amused seed 101: clip_brief 25.84  clip_text 16.22  edge 0.0270  contrast 0.2970  33.2 с
+  amused seed 102: clip_brief 25.28  clip_text 16.25  edge 0.0311  contrast 0.3103  33.6 с
+  amused seed 103: clip_brief 21.98  clip_text 15.41  edge 0.0342  contrast 0.3232  37.3 с
+  amused seed 104: clip_brief 27.32  clip_text 17.92  edge 0.0307  contrast 0.3483  41.8 с
+  amused seed 105: clip_brief 28.06  clip_text 15.75  edge 0.0327  contrast 0.3282  40.2 с
+variant_summary: 441.5 с (CLIP, две загрузки, два прогрева, 10 изображений)
+листы слепого сравнения: ['blind_101.png', 'blind_102.png', 'blind_103.png', 'blind_104.png', 'blind_105.png']
+
+Сводка variant_summary (как в указаниях):
+метрика              A        s         B         Δ   |Δ|/s  |Δ|>2s
+clip_brief       23.31     2.20     25.70     +2.38     1.1  нет
+clip_text        15.36     0.67     16.31     +0.95     1.4  нет
+edge            0.0394   0.0110    0.0311   -0.0082     0.7  нет
+contrast        0.1297   0.0134    0.3214   +0.1917    14.4  да
+seconds          18.48     0.93     37.22    +18.74    20.2  да
+
+Пересчёт сводки по записанным значениям совпал с variant_summary: True
+отношение времён B/A: 2.01
+
+По seed (clip_brief):
+seed      101      102      103      104      105
+A       20.74    23.52    23.64    22.04    26.64
+B       25.84    25.28    21.98    27.32    28.06
+B − A   +5.10    +1.76    -1.66    +5.28    +1.42
+
+пик памяти процесса: 7.8 ГБ
+clip_brief {'sig2s': False, 'practical': True, 'label': 'только допуск'}
+clip_text {'sig2s': False, 'practical': False, 'label': 'ни то ни другое'}
+edge {'sig2s': False, 'practical': True, 'label': 'только допуск'}
+contrast {'sig2s': True, 'practical': True, 'label': 'значимо и важно'}
+seconds {'sig2s': True, 'practical': True, 'label': 'значимо и важно'}
+записано: results_v27.json, изображения и листы слепого сравнения в v27
+Готово: results_v27.json, manifest.json, v27/; ключ слепого сравнения не показан.
