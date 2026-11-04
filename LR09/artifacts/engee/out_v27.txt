@@ -1,0 +1,45 @@
+Среда: {"engee": "26.10.2-H2", "julia": "1.12.6", "device": "cpu", "dtype": "float32", "date_utc": "2026-11-04 13:05:01", "python": "3.11.11", "torch": "2.4.1+cpu", "diffusers": "0.32.2", "transformers": "4.57.6", "numpy": "2.1.3", "scipy": "1.15.2", "pillow": "11.1.0", "huggingface_hub": "0.36.2", "cuda": false, "torch_threads": 4, "cpu": "Intel(R) Xeon(R) Platinum 8180 CPU @ 2.50GHz", "cpu_count": 112, "model": "stabilityai/sd-turbo", "revision": "b261bac6fd2cf515557d5d0707481eafa0485ec2", "clip": "openai/clip-vit-large-patch14", "clip_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41", "steps": 1, "guidance": 0.0, "size": 512, "seeds": [101, 102, 103, 104, 105]}
+Вариант 27: контекст 5, элемент 3 (palette)
+A: 'electronic music cover art'
+B: 'electronic music cover art, iridescent purple and cyan colors'
+текст-цель CLIP: 'iridescent purple and cyan colors'
+загрузка: SD Turbo 64.3 с, CLIP 23.1 с
+  A seed 101: clip_target 11.04  clip_subject 23.91  edge 0.0515  contrast 0.1736  17.6 с
+  A seed 102: clip_target 9.95  clip_subject 22.65  edge 0.0484  contrast 0.1243  18.6 с
+  A seed 103: clip_target 10.59  clip_subject 24.17  edge 0.0645  contrast 0.1504  18.8 с
+  A seed 104: clip_target 8.09  clip_subject 20.16  edge 0.0467  contrast 0.1344  18.8 с
+  A seed 105: clip_target 9.37  clip_subject 20.82  edge 0.0519  contrast 0.1387  17.8 с
+  B seed 101: clip_target 18.80  clip_subject 24.38  edge 0.0368  contrast 0.1969  18.6 с
+  B seed 102: clip_target 22.17  clip_subject 24.62  edge 0.0354  contrast 0.1345  18.6 с
+  B seed 103: clip_target 20.41  clip_subject 25.46  edge 0.0536  contrast 0.1591  17.8 с
+  B seed 104: clip_target 23.25  clip_subject 25.44  edge 0.0391  contrast 0.1512  18.1 с
+  B seed 105: clip_target 19.82  clip_subject 24.89  edge 0.0366  contrast 0.1743  18.5 с
+серия (прогрев + 10 изображений + CLIP): 223.9 с
+
+Сводка variant_summary (как в указаниях):
+метрика               A        s         B         Δ   |Δ|/s  |Δ|>2s
+clip_target        9.81     1.15     20.89    +11.09     9.6  да
+clip_subject      22.34     1.80     24.96     +2.61     1.4  нет
+edge             0.0526   0.0070    0.0403   -0.0123     1.8  нет
+contrast         0.1443   0.0189    0.1632   +0.0189     1.0  нет
+
+Пересчёт сводки по записанным значениям совпал с variant_summary: True
+
+По seed (clip_target):
+seed      101      102      103      104      105
+A       11.04     9.95    10.59     8.09     9.37
+B       18.80    22.17    20.41    23.25    19.82
+B − A   +7.75   +12.23    +9.82   +15.17   +10.46
+парные разности: положительных 5 из 5; среднее +11.09, s разностей 2.79, среднее/s 3.98
+
+Определённость: повторная генерация seed 101
+  A: пиксели совпали с серией бит в бит — True
+  B: пиксели совпали с серией бит в бит — True
+
+пик памяти процесса: 7.8 ГБ; среднее время изображения A 18.3 с, B 18.3 с
+clip_target {'sig2s': True, 'practical': True, 'threshold_absolute': 1.0, 'label': 'значимо и важно'}
+clip_subject {'sig2s': False, 'practical': True, 'threshold_absolute': 1.0, 'label': 'только допуск'}
+edge {'sig2s': False, 'practical': True, 'threshold_absolute': 0.005259534210333948, 'label': 'только допуск'}
+contrast {'sig2s': False, 'practical': True, 'threshold_absolute': 0.01442799254754216, 'label': 'только допуск'}
+записано: results_v27.json, изображения в v27
+Готово: results_v27.json, comparison.png, manifest.json и v27/

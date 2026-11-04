@@ -1,0 +1,79 @@
+**1. Шлифованный металл с радужными бликами**
+- Предмет: шлифованный металл, радужные блики
+- Стиль: макросъёмка (macro photography)
+- Цвета: радужные блики (можно взять из списка: teal, purple, pink)
+- Ограничения: без логотипов → avoid: logo
+
+**2. Синтвейв: неоновая сетка, розово-фиолетовый закат**
+- Предмет: неоновая сетка на горизонте, закат
+- Стиль: не задан явно → выберу flat vector illustration / isometric 3D render; возьму isometric 3D render
+- Цвета: pink, purple (жёлтый запрещён)
+- Ограничения: без жёлтого → в палитру не включать yellow; в avoid жёлтый не входит (список avoid ограничен), поэтому просто не используем yellow
+
+**3. Ambient: туман над тёмным озером, минимализм, огонёк**
+- Предмет: туман над озером, одинокий огонёк
+- Стиль: минимализм → minimal geometric
+- Цвета: gray, black, amber (огонёк)
+- Ограничения: нет явных запретов → avoid: []
+
+**4. Техно: чёрно-белые геометрические полосы, симметрия**
+- Предмет: геометрические полосы, высокий контраст
+- Стиль: minimal geometric
+- Цвета: ровно два → black, white
+- Ограничения: нет явных запретов → avoid: []
+
+**5. Дрим-поп: пастельные облака и стеклянные шары, мягкий свет**
+- Предмет: пастельные облака, стеклянные шары
+- Стиль: 3D render
+- Цвета: pink, purple, blue (пастель)
+- Ограничения: нет явных запретов → avoid: []
+
+```json
+[
+  {
+    "subject": "polished metal surface with iridescent rainbow highlights",
+    "setting": "abstract macro surface background",
+    "style": "macro photography",
+    "lighting": "strong contrast dramatic reflections",
+    "palette": ["teal", "purple", "pink"],
+    "composition": "close-up",
+    "avoid": ["logo"]
+  },
+  {
+    "subject": "neon grid on horizon under synthwave sunset",
+    "setting": "retro futuristic landscape horizon",
+    "style": "isometric 3D render",
+    "lighting": "glowing neon backlight",
+    "palette": ["pink", "purple"],
+    "composition": "centered",
+    "avoid": []
+  },
+  {
+    "subject": "lone light over misty dark lake",
+    "setting": "foggy lake at night",
+    "style": "minimal geometric",
+    "lighting": "soft dim glow",
+    "palette": ["gray", "black", "amber"],
+    "composition": "wide negative space",
+    "avoid": []
+  },
+  {
+    "subject": "black and white geometric stripes high contrast",
+    "setting": "abstract minimal background",
+    "style": "minimal geometric",
+    "lighting": "high contrast stark light",
+    "palette": ["black", "white"],
+    "composition": "symmetrical",
+    "avoid": []
+  },
+  {
+    "subject": "pastel clouds and floating glass spheres",
+    "setting": "dreamy soft sky",
+    "style": "3D render",
+    "lighting": "soft diffused light",
+    "palette": ["pink", "purple", "blue"],
+    "composition": "rule of thirds",
+    "avoid": []
+  }
+]
+```

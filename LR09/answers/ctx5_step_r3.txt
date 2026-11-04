@@ -1,0 +1,57 @@
+## Ключевые элементы по каждому описанию
+
+**1.** Предмет: шлифованный металл с радужными бликами; стиль: макросъёмка; свет: сильный контраст; ограничение: без логотипов.
+**2.** Предмет: неоновая сетка на горизонте; фон: розово-фиолетовый закат; палитра: розовый, фиолетовый; ограничение: без жёлтого.
+**3.** Предмет: одинокий огонёк; фон: туман над тёмным озером; стиль: минимализм; ограничений нет.
+**4.** Предмет: чёрно-белые геометрические полосы; композиция: симметрия; контраст высокий; палитра ровно два цвета: чёрный и белый; ограничений нет.
+**5.** Предмет: пастельные облака и стеклянные шары; свет: мягкий; ограничений нет.
+
+```json
+[
+  {
+    "subject": "polished metal surface with iridescent rainbow reflections",
+    "setting": "abstract close-up background",
+    "style": "macro photography",
+    "lighting": "high contrast dramatic light",
+    "palette": ["gray", "purple", "teal"],
+    "composition": "close-up",
+    "avoid": ["logo"]
+  },
+  {
+    "subject": "neon grid on the horizon",
+    "setting": "pink and purple sunset sky",
+    "style": "flat vector illustration",
+    "lighting": "glowing neon backlight",
+    "palette": ["pink", "purple"],
+    "composition": "centered",
+    "avoid": []
+  },
+  {
+    "subject": "single lonely light over dark lake",
+    "setting": "foggy dark lake at night",
+    "style": "minimal geometric",
+    "lighting": "dim soft glow",
+    "palette": ["gray", "black", "amber"],
+    "composition": "wide negative space",
+    "avoid": []
+  },
+  {
+    "subject": "black and white geometric stripes",
+    "setting": "abstract graphic background",
+    "style": "minimal geometric",
+    "lighting": "high contrast stark light",
+    "palette": ["black", "white"],
+    "composition": "symmetrical",
+    "avoid": []
+  },
+  {
+    "subject": "pastel clouds and glass spheres",
+    "setting": "soft dreamy sky",
+    "style": "3D render",
+    "lighting": "soft diffused light",
+    "palette": ["pink", "blue", "white"],
+    "composition": "centered",
+    "avoid": []
+  }
+]
+```

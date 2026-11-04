@@ -1,0 +1,47 @@
+[
+  {
+    "subject": "polished metal surface with iridescent rainbow highlights",
+    "setting": "abstract metallic background",
+    "style": "macro photography",
+    "lighting": "strong high contrast lighting",
+    "palette": ["gray", "purple", "blue"],
+    "composition": "close-up",
+    "avoid": ["logo"]
+  },
+  {
+    "subject": "neon grid on the horizon at sunset",
+    "setting": "synthwave sunset landscape",
+    "style": "3D render",
+    "lighting": "glowing neon backlight",
+    "palette": ["pink", "purple"],
+    "composition": "symmetrical",
+    "avoid": ["yellow"]
+  },
+  {
+    "subject": "lone light over a dark misty lake",
+    "setting": "foggy dark lake at night",
+    "style": "minimal geometric",
+    "lighting": "soft dim glow",
+    "palette": ["blue", "black", "gray"],
+    "composition": "wide negative space",
+    "avoid": []
+  },
+  {
+    "subject": "black and white geometric stripes pattern",
+    "setting": "abstract graphic background",
+    "style": "minimal geometric",
+    "lighting": "high contrast graphic lighting",
+    "palette": ["black", "white"],
+    "composition": "symmetrical",
+    "avoid": []
+  },
+  {
+    "subject": "pastel clouds and glass spheres",
+    "setting": "dreamy pastel sky",
+    "style": "3D render",
+    "lighting": "soft diffused light",
+    "palette": ["pink", "blue", "white"],
+    "composition": "centered",
+    "avoid": []
+  }
+]

@@ -1,0 +1,297 @@
+{
+  "zero": {
+    "k1": 0.8666666666666667,
+    "k2": 1.0,
+    "k3": 0.8666666666666667,
+    "k4": 0.8666666666666667,
+    "k4_valid_repeats": 3,
+    "k4_complete": true,
+    "each": [
+      {
+        "file": "LR09/answers/ctx5_zero_r1.txt",
+        "sha256": "da78a01fb215e7d9e9364b95e15533222c7e151d099bdc2102d4e1e672030ff8",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 0.8,
+        "k2": 1.0,
+        "k3": 0.8,
+        "errors": [
+          "объект 2: avoid: элементы из списка"
+        ]
+      },
+      {
+        "file": "LR09/answers/ctx5_zero_r2.txt",
+        "sha256": "876d7b9b703cd8314043308780dc55b8664376b2fde1a5e0005045a516c3d1cb",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 0.8,
+        "k2": 1.0,
+        "k3": 0.8,
+        "errors": [
+          "объект 2: avoid: элементы из списка"
+        ]
+      },
+      {
+        "file": "LR09/answers/ctx5_zero_r3.txt",
+        "sha256": "6bc74348f682fb9e7fb545b8cbcfa4bda01fe6fb93dab016e6193f1f90a02786",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      }
+    ],
+    "choices": {
+      "style": [
+        [
+          "macro photography",
+          "3D render",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ],
+        [
+          "macro photography",
+          "flat vector illustration",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ],
+        [
+          "macro photography",
+          "flat vector illustration",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ]
+      ],
+      "composition": [
+        [
+          "close-up",
+          "symmetrical",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ],
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ],
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ]
+      ]
+    },
+    "k4_style": 0.8666666666666667,
+    "k4_composition": 0.8666666666666667
+  },
+  "few": {
+    "k1": 0.9333333333333332,
+    "k2": 1.0,
+    "k3": 0.9333333333333332,
+    "k4": 0.7333333333333333,
+    "k4_valid_repeats": 3,
+    "k4_complete": true,
+    "each": [
+      {
+        "file": "LR09/answers/ctx5_few_r1.txt",
+        "sha256": "69f1b6dd02b34a37d12108bc6c11cc2e669fc36ca664315dd1f2d1be16d93483",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 0.8,
+        "k2": 1.0,
+        "k3": 0.8,
+        "errors": [
+          "объект 2: avoid: элементы из списка"
+        ]
+      },
+      {
+        "file": "LR09/answers/ctx5_few_r2.txt",
+        "sha256": "07185fcb54d4a6e444dc425954c97dc5f2c70e7d8069f880c2ff71994197425a",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      },
+      {
+        "file": "LR09/answers/ctx5_few_r3.txt",
+        "sha256": "6c3fb8b7508de6a2d05a02d605e6e51143a39074ff836c1c4f8ccad0ac2affb0",
+        "parsed": true,
+        "fenced": false,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      }
+    ],
+    "choices": {
+      "style": [
+        [
+          "macro photography",
+          "flat vector illustration",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ],
+        [
+          "macro photography",
+          "3D render",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ],
+        [
+          "macro photography",
+          "flat vector illustration",
+          "minimal geometric",
+          "minimal geometric",
+          "watercolor"
+        ]
+      ],
+      "composition": [
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ],
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "rule of thirds"
+        ],
+        [
+          "close-up",
+          "symmetrical",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ]
+      ]
+    },
+    "k4_style": 0.7333333333333333,
+    "k4_composition": 0.7333333333333333
+  },
+  "step": {
+    "k1": 1.0,
+    "k2": 1.0,
+    "k3": 1.0,
+    "k4": 0.7666666666666667,
+    "k4_valid_repeats": 3,
+    "k4_complete": true,
+    "each": [
+      {
+        "file": "LR09/answers/ctx5_step_r1.txt",
+        "sha256": "9db57c6af32cd0b5b7fc3d95229a28090876f310e61f57bd7695c757b10cfe42",
+        "parsed": true,
+        "fenced": true,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      },
+      {
+        "file": "LR09/answers/ctx5_step_r2.txt",
+        "sha256": "74b429ec76f548d0214483e29ff4bebebfb47f35dab55c6b069fb586201c0c8c",
+        "parsed": true,
+        "fenced": true,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      },
+      {
+        "file": "LR09/answers/ctx5_step_r3.txt",
+        "sha256": "ad0b45ca8cd85492bc346058e60376ee9f7cf8eda27228a49e50f990f03898af",
+        "parsed": true,
+        "fenced": true,
+        "n": 5,
+        "k1": 1.0,
+        "k2": 1.0,
+        "k3": 1.0,
+        "errors": []
+      }
+    ],
+    "choices": {
+      "style": [
+        [
+          "macro photography",
+          "3D render",
+          "minimal geometric",
+          "minimal geometric",
+          "watercolor"
+        ],
+        [
+          "macro photography",
+          "isometric 3D render",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ],
+        [
+          "macro photography",
+          "flat vector illustration",
+          "minimal geometric",
+          "minimal geometric",
+          "3D render"
+        ]
+      ],
+      "composition": [
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "rule of thirds"
+        ],
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "rule of thirds"
+        ],
+        [
+          "close-up",
+          "centered",
+          "wide negative space",
+          "symmetrical",
+          "centered"
+        ]
+      ]
+    },
+    "k4_style": 0.6666666666666666,
+    "k4_composition": 0.8666666666666667
+  },
+  "_meta": {
+    "variant": 27,
+    "context": 5,
+    "scored_utc": "2026-11-04T13:27:13.627935+00:00",
+    "expected_repeats_per_approach": 3,
+    "files": 9,
+    "k4_all_repeats_usable": true,
+    "checker_sha256": "5eabb31fd8ba76f103020177acfb04cdb2127352cbddf22e67f2c0b4835abcb5",
+    "note": "K1-K3: original teacher functions; K4 below three valid repeats is explicitly partial. Chat sessions are documented separately."
+  }
+}
